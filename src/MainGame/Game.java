@@ -8,6 +8,20 @@ public class Game {
     private Room currentRoom;
     Scanner scanner = new Scanner(System.in);
 
+public void game(){
+
+}
+
+
+
+public void play(){
+
+
+
+}
+
+
+
 
 
 }

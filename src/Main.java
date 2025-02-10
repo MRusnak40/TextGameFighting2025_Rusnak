@@ -1,4 +1,5 @@
 import Arena.Lobby;
+import Postavy.Postava;
 
 import java.util.Scanner;
 

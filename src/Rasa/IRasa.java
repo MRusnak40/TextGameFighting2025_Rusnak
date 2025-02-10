@@ -28,24 +28,15 @@ public interface IRasa {
                 System.out.println("-----------------");
                 return new Elf();
 
-            case 3:
-                System.out.println("-----------------");
-                System.out.println("CHoosed Rase: Undead");
-                System.out.println("-----------------");
-                return new Nemrtvi();
 
-            case 4:
+            case 3:
                 System.out.println("-----------------");
                 System.out.println("CHoosed Rase: Dark elf");
                 System.out.println("-----------------");
                 return new TemnyElf();
-            case 5:
-                System.out.println("-----------------");
-                System.out.println("CHoosed Rase: Troll");
-                System.out.println("-----------------");
-                return new Troll();
 
-            case 6:
+
+            case 4:
                 System.out.println("-----------------");
                 System.out.println("CHoosed Rase: Liliput");
                 System.out.println("-----------------");

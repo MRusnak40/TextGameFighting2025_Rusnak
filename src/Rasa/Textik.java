@@ -7,10 +7,8 @@ public abstract class Textik {
         System.out.println("Rasa a druhy: ");
         System.out.println("1. člověk +3% síla, +3% inteligence, +4% obratnost \n" +
                 "2. elf +6% inteligence, +4% obratnost \n" +
-                "3. nemrtví +6% Sila  +10% Odolnost \n" +
-                "4. temný elf +4% Sila  +5% inteligence +5% Obratnost  \n" +
-                "5. troll +5% Sila  +7% odolnost \n" +
-                "6. trpaslík +4% Sila +3 Inteligence +5% Odolnost");
+                "3. temný elf +4% Sila  +5% inteligence +5% Obratnost  \n" +
+                "4. trpaslík +4% Sila +3 Inteligence +5% Odolnost");
         System.out.print("Your Choose:");
 
     }
