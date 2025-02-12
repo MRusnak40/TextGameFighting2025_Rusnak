@@ -1,4 +1,4 @@
-package MainGame;
+package AtributesOfPlayer;
 
 public class PickUpItem {
 }
