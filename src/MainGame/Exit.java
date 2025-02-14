@@ -1,6 +1,6 @@
 package MainGame;
 
-public class Fight extends Command{
+public class Exit extends Command{
     @Override
     public String execute() {
         return "";

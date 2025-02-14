@@ -1,6 +1,10 @@
-package MainGame;
+package AtributesOfPlayer;
 
-public class Fight extends Command{
+import MainGame.Command;
+
+public class TalkToNPC extends Command {
+    protected String dialog;
+
     @Override
     public String execute() {
         return "";
@@ -10,4 +14,5 @@ public class Fight extends Command{
     public boolean exit() {
         return false;
     }
+
 }

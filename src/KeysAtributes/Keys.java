@@ -1,6 +1,6 @@
 package KeysAtributes;
 
-public abstract class Keys {
+public  class Keys {
 
 protected boolean movable;
 protected boolean visible;
