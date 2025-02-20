@@ -8,7 +8,7 @@ import NPCs.NPC;
 import java.util.ArrayList;
 
 public  class    Room {
-    protected String nameOfRoom;
+    protected String  nameOfRoom;
     protected int x;
     protected int y;
     protected boolean isPosibleGoLeft;
