@@ -1,26 +1,25 @@
-package Postavy;
+package Character;
 
-import Rasa.IRasa;
+import Rase.IRasa;
 
-public class Pruzkumnik extends Postava{
+public class Bojovnik extends Postava {
 
 
-    public Pruzkumnik(String jmeno, double sila, double inteligence, double obratnost, double odolnost, int level, int expy, IRasa rasa) {
+    public Bojovnik(String jmeno, double sila, double inteligence, double obratnost, double odolnost, int level, int expy, IRasa rasa) {
         super(jmeno, sila, inteligence, obratnost, odolnost, level, expy, rasa);
     }
 
-    public Pruzkumnik(String jmeno, double sila, double inteligence, double obratnost, double odolnost, IRasa rasa) {
+    public Bojovnik(String jmeno, double sila, double inteligence, double obratnost, double odolnost, IRasa rasa) {
         super(jmeno, sila, inteligence, obratnost, odolnost, rasa);
     }
 
-    @Override
     public double getUtok() {
-        return sila+inteligence+obratnost;
+        return sila+inteligence+obratnost ;
     }
 
     @Override
     public double getVlastnostKObrane(Postava obrance) {
-        return obratnost+obratnost;
+        return obratnost+odolnost;
     }
 
     @Override
@@ -84,16 +83,6 @@ public class Pruzkumnik extends Postava{
     }
 
     @Override
-    public int getCoins() {
-        return super.getCoins();
-    }
-
-    @Override
-    public void setCoins(int coins) {
-        super.setCoins(coins);
-    }
-
-    @Override
     public void setObratnost(double obratnost) {
         super.setObratnost(obratnost);
     }
@@ -131,5 +120,15 @@ public class Pruzkumnik extends Postava{
     @Override
     public void setRasa(IRasa rasa) {
         super.setRasa(rasa);
+    }
+
+    @Override
+    public void setCoins(int coins) {
+        super.setCoins(coins);
+    }
+
+    @Override
+    public int getCoins() {
+        return super.getCoins();
     }
 }

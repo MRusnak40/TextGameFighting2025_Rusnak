@@ -1,6 +1,4 @@
-package Rasa;
-
-import org.w3c.dom.Text;
+package Rase;
 
 public interface IRasa {
     public double bonusSila();

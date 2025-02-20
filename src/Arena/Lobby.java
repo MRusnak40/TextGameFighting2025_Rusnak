@@ -1,7 +1,7 @@
 package Arena;
 
-import Postavy.Postava;
-import Rasa.Textik;
+import Character.Postava;
+import Rase.Textik;
 
 import java.util.Scanner;
 

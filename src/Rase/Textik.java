@@ -1,4 +1,4 @@
-package Rasa;
+package Rase;
 
 public abstract class Textik {
 

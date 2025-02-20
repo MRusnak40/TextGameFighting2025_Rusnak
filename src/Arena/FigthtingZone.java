@@ -1,7 +1,6 @@
 package Arena;
 
-import Postavy.Carodej;
-import Postavy.Postava;
+import Character.Postava;
 
 public class FigthtingZone {
 

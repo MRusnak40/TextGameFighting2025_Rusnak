@@ -1,24 +1,24 @@
-package Rasa;
+package Rase;
 
-public class Trpaslik implements IRasa{
+public class Elf implements IRasa{
     @Override
     public double bonusSila() {
-        return 1.04;
-    }
-
-    @Override
-    public double bonusInteligence() {
-        return 1.02;
-    }
-
-    @Override
-    public double bonusObratnost() {
         return 1;
     }
 
     @Override
+    public double bonusInteligence() {
+        return 1.06;
+    }
+
+    @Override
+    public double bonusObratnost() {
+        return 1.04;
+    }
+
+    @Override
     public double bonusOdolnost() {
-        return 1.05;
+        return 1;
     }
 
     @Override
@@ -28,6 +28,6 @@ public class Trpaslik implements IRasa{
 
     @Override
     public String toString() {
-        return "Trpaslik{}";
+        return "Elf{}";
     }
 }

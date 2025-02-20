@@ -1,7 +1,7 @@
-package Postavy;
+package Character;
 
-import Rasa.IRasa;
-import Rasa.Textik;
+import Rase.IRasa;
+import Rase.Textik;
 
 import java.util.Scanner;
 

@@ -32,6 +32,17 @@ public  class GameLoader {
  */
 
     public Room loadRoom(String filepath) {
+
+
+
+
+
+
+
+
+    }
+
+        /*
         Room room = new Room();
 
         try (BufferedReader br = new BufferedReader(new FileReader(filepath))) {
@@ -61,7 +72,9 @@ public  class GameLoader {
         }
 
         return room; // Vrátí načtenou místnost
-    }
+
+         */
+
 
 
 

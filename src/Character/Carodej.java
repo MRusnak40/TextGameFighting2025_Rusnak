@@ -1,6 +1,6 @@
-package Postavy;
+package Character;
 
-import Rasa.IRasa;
+import Rase.IRasa;
 
 public class Carodej extends Postava {
 
