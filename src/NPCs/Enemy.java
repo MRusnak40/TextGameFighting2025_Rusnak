@@ -84,4 +84,16 @@ public abstract class Enemy implements Serializable {
     public void setLevel(int level) {
         this.level = level;
     }
+
+    @Override
+    public String toString() {
+        return "Enemy{" +
+                "jmeno='" + jmeno + '\'' +
+                ", sila=" + sila +
+                ", inteligence=" + inteligence +
+                ", obratnost=" + obratnost +
+                ", odolnost=" + odolnost +
+                ", level=" + level +
+                '}';
+    }
 }

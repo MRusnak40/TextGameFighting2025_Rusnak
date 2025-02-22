@@ -12,9 +12,9 @@ public abstract class Postava {
     protected double obratnost;
     protected double odolnost;
     protected int level;
-    protected int expy;
     protected IRasa rasa;
-    protected int coins;
+    protected double maxHealth;
+    protected double currentHealth;
     Scanner sc = new Scanner(System.in);
 
 
@@ -36,9 +36,8 @@ public abstract class Postava {
         this.obratnost = obratnost;
         this.odolnost = odolnost;
         this.level = 1;
-        this.expy = 0;
         this.rasa = rasa;
-        this.coins = 0;
+
     }
 
     public static Postava vvberPostavy(int choosedNumber) {
