@@ -17,16 +17,16 @@ public abstract class Postava {
     protected double currentHealth;
     Scanner sc = new Scanner(System.in);
 
-
-    public Postava(String jmeno, double sila, double inteligence, double obratnost, double odolnost, int level, int expy, IRasa rasa) {
+    public Postava(String jmeno, double sila, double inteligence, double obratnost, double odolnost, int level, IRasa rasa, double maxHealth, double currentHealth) {
         this.jmeno = jmeno;
         this.sila = sila;
         this.inteligence = inteligence;
         this.obratnost = obratnost;
         this.odolnost = odolnost;
         this.level = level;
-        this.expy = expy;
         this.rasa = rasa;
+        this.maxHealth = 100;
+        this.currentHealth = 100;
     }
 
     public Postava(String jmeno, double sila, double inteligence, double obratnost, double odolnost, IRasa rasa) {
@@ -147,12 +147,7 @@ public abstract class Postava {
 
     public abstract double getVlastnostKObrane(Postava obrance);
 
-    public void lvlUP(Postava levliciPostava) {
-        levliciPostava.level += 1;
-        levliciPostava.expy = 0;
-    }
 
-    ;
 
     public void upgradeInteligence(Postava inteligenceBro) {
 
@@ -191,15 +186,32 @@ public abstract class Postava {
     @Override
     public String toString() {
         return "Postava{" +
-                "jmeno='" + jmeno + '\'' +
-                ", sila=" + sila +
-                ", inteligence=" + inteligence +
-                ", obratnost=" + obratnost +
-                ", odolnost=" + odolnost +
-                ", level=" + level +
-                ", expy=" + expy +
+                "currentHealth=" + currentHealth +
+                ", maxHealth=" + maxHealth +
                 ", rasa=" + rasa +
+                ", level=" + level +
+                ", odolnost=" + odolnost +
+                ", obratnost=" + obratnost +
+                ", inteligence=" + inteligence +
+                ", sila=" + sila +
+                ", jmeno='" + jmeno + '\'' +
                 '}';
+    }
+
+    public double getMaxHealth() {
+        return maxHealth;
+    }
+
+    public void setMaxHealth(double maxHealth) {
+        this.maxHealth = maxHealth;
+    }
+
+    public double getCurrentHealth() {
+        return currentHealth;
+    }
+
+    public void setCurrentHealth(double currentHealth) {
+        this.currentHealth = currentHealth;
     }
 
     public String getJmeno() {
@@ -234,13 +246,7 @@ public abstract class Postava {
         this.level = level;
     }
 
-    public int getExpy() {
-        return expy;
-    }
 
-    public void setExpy(int expy) {
-        this.expy = expy;
-    }
 
     public IRasa getRasa() {
         return rasa;
@@ -250,11 +256,5 @@ public abstract class Postava {
         this.rasa = rasa;
     }
 
-    public int getCoins() {
-        return coins;
-    }
 
-    public void setCoins(int coins) {
-        this.coins = coins;
-    }
 }

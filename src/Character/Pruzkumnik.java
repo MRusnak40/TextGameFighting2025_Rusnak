@@ -5,12 +5,13 @@ import Rase.IRasa;
 public class Pruzkumnik extends Postava{
 
 
-    public Pruzkumnik(String jmeno, double sila, double inteligence, double obratnost, double odolnost, int level, int expy, IRasa rasa) {
-        super(jmeno, sila, inteligence, obratnost, odolnost, level, expy, rasa);
-    }
 
     public Pruzkumnik(String jmeno, double sila, double inteligence, double obratnost, double odolnost, IRasa rasa) {
         super(jmeno, sila, inteligence, obratnost, odolnost, rasa);
+    }
+
+    public Pruzkumnik(String jmeno, double sila, double inteligence, double obratnost, double odolnost, int level, IRasa rasa, double maxHealth, double currentHealth) {
+        super(jmeno, sila, inteligence, obratnost, odolnost, level, rasa, maxHealth, currentHealth);
     }
 
     @Override
@@ -53,10 +54,7 @@ public class Pruzkumnik extends Postava{
         return super.getObrana(protivnik);
     }
 
-    @Override
-    public void lvlUP(Postava levliciPostava) {
-        super.lvlUP(levliciPostava);
-    }
+
 
     @Override
     public String toString() {
@@ -83,15 +81,7 @@ public class Pruzkumnik extends Postava{
         super.setInteligence(inteligence);
     }
 
-    @Override
-    public int getCoins() {
-        return super.getCoins();
-    }
 
-    @Override
-    public void setCoins(int coins) {
-        super.setCoins(coins);
-    }
 
     @Override
     public void setObratnost(double obratnost) {
@@ -113,15 +103,7 @@ public class Pruzkumnik extends Postava{
         super.setLevel(level);
     }
 
-    @Override
-    public int getExpy() {
-        return super.getExpy();
-    }
 
-    @Override
-    public void setExpy(int expy) {
-        super.setExpy(expy);
-    }
 
     @Override
     public IRasa getRasa() {

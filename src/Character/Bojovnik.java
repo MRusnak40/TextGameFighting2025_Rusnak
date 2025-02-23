@@ -5,8 +5,8 @@ import Rase.IRasa;
 public class Bojovnik extends Postava {
 
 
-    public Bojovnik(String jmeno, double sila, double inteligence, double obratnost, double odolnost, int level, int expy, IRasa rasa) {
-        super(jmeno, sila, inteligence, obratnost, odolnost, level, expy, rasa);
+    public Bojovnik(String jmeno, double sila, double inteligence, double obratnost, double odolnost, int level, IRasa rasa, double maxHealth, double currentHealth) {
+        super(jmeno, sila, inteligence, obratnost, odolnost, level, rasa, maxHealth, currentHealth);
     }
 
     public Bojovnik(String jmeno, double sila, double inteligence, double obratnost, double odolnost, IRasa rasa) {
@@ -52,10 +52,7 @@ public class Bojovnik extends Postava {
         return super.getObrana(protivnik);
     }
 
-    @Override
-    public void lvlUP(Postava levliciPostava) {
-        super.lvlUP(levliciPostava);
-    }
+
 
     @Override
     public String toString() {
@@ -102,15 +99,7 @@ public class Bojovnik extends Postava {
         super.setLevel(level);
     }
 
-    @Override
-    public int getExpy() {
-        return super.getExpy();
-    }
 
-    @Override
-    public void setExpy(int expy) {
-        super.setExpy(expy);
-    }
 
     @Override
     public IRasa getRasa() {
@@ -122,13 +111,5 @@ public class Bojovnik extends Postava {
         super.setRasa(rasa);
     }
 
-    @Override
-    public void setCoins(int coins) {
-        super.setCoins(coins);
-    }
 
-    @Override
-    public int getCoins() {
-        return super.getCoins();
-    }
 }

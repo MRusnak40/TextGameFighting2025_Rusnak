@@ -23,7 +23,7 @@ public abstract class Textik {
 
 
     public static void movePosibilites() {
-        System.out.println("3x Rooms");
+        System.out.println("3x Rooms.txt");
         System.out.println("1* Arena you will be fighting enemies");
         System.out.println("2* Shop where you can buy upgrades");
         System.out.println("3* Deafaultly you are in lobby");

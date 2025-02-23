@@ -9,7 +9,7 @@ import Character.Postava;
 
 
 public class Shop extends JFrame {
-
+/*
 
     public void shoping(Postava postava) {
 
@@ -128,5 +128,7 @@ setAlwaysOnTop(true);
         add(panel);
     }
 
+
+ */
 
 }

@@ -14,7 +14,7 @@ game.play();
 /*
 chyby
 
-Rooms budu nacitat vse krome odkazu na  na vedlejsi tridy
+Rooms.txt budu nacitat vse krome odkazu na  na vedlejsi tridy
 Game saving asi ne
 Items, enemies i keys budou nahrany spolecne s rooms
 Jestli Keys Items Npc maji byt abstract nebo ne

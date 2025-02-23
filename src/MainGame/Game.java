@@ -9,28 +9,30 @@ public class Game {
     private Room currentRoom;
     Scanner scanner = new Scanner(System.in);
 ArrayList<Room>rooms = new ArrayList<>();
-private String filepath="";
-public void game(){
+private String filepath="Rooms.txt" ;
 
+public void game(){
+GameLoader loader = new GameLoader();
+rooms=GameLoader.loadRoomsFromFile13(filepath);
+
+    System.out.println("---------------------------");
+    // Check if rooms were loaded successfully
+    if (rooms != null && !rooms.isEmpty()) {
+        System.out.println("Rooms.txt loaded successfully. Number of rooms: " + rooms.size());
+        // You can add further logic to start the game here
+    } else {
+        System.out.println("No rooms were loaded. Please check the file path and format.");
+    }
 }
 
 
 
 public void play(){
-    /*
-filepath="Rooms";
-    GameLoader gameLoader = new GameLoader();
+ game();
 
-    for (int i = 0; i < 9; i++) { // Cyklus pro načtení 9 místností
-        Room room = gameLoader.loadRoom(filepath); // Načtení místnosti
-        rooms.add(room); // Přidání místnosti do seznamu
-    }
-
+    System.out.println("-------------");
     System.out.println(rooms);
 
-
-
-     */
 }
 
 
