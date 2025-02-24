@@ -12,8 +12,8 @@ ArrayList<Room>rooms = new ArrayList<>();
 private String filepath="Rooms.txt" ;
 
 public void game(){
-GameLoader loader = new GameLoader();
-rooms=GameLoader.loadRoomsFromFile13(filepath);
+GameLoading g = new GameLoading();
+rooms=GameLoading.loadRoomsFromFile(filepath);
 
     System.out.println("---------------------------");
     // Check if rooms were loaded successfully

@@ -1,14 +1,15 @@
 package KeysAtributes;
 
 public  abstract class Keys {
+    protected KeyEnum type;
 protected String name;
 protected boolean movable;
 protected boolean visible;
 protected boolean broken;
 protected boolean used;
 
-
-    public Keys(String name, boolean movable, boolean visible, boolean broken, boolean used) {
+    public Keys(KeyEnum type, String name, boolean movable, boolean visible, boolean broken, boolean used) {
+        this.type = type;
         this.name = name;
         this.movable = movable;
         this.visible = visible;

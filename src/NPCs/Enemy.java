@@ -2,9 +2,8 @@ package NPCs;
 
 import java.io.Serializable;
 
-public abstract class Enemy implements Serializable {
-
-
+public abstract class Enemy  {
+    protected EnemyEnum type;
     protected String jmeno;
     protected double sila;
     protected double inteligence;
@@ -12,7 +11,8 @@ public abstract class Enemy implements Serializable {
     protected double odolnost;
     protected int level;
 
-    public Enemy(String jmeno, double sila, double inteligence, double obratnost, double odolnost, int level) {
+    public Enemy(EnemyEnum type, String jmeno, double sila, double inteligence, double obratnost, double odolnost, int level) {
+        this.type = type;
         this.jmeno = jmeno;
         this.sila = sila;
         this.inteligence = inteligence;
@@ -20,6 +20,9 @@ public abstract class Enemy implements Serializable {
         this.odolnost = odolnost;
         this.level = level;
     }
+
+
+
 
 
     public  double getUtok(){

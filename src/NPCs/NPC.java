@@ -3,7 +3,7 @@ package NPCs;
 import java.io.Serializable;
 
 public abstract class NPC   {
-
+protected NPCEnum type;
 protected String name;
 protected String dialog;
 protected String welcomeText;
@@ -11,7 +11,8 @@ protected boolean isSpoken;
 protected boolean isImportant;
 
 
-    public NPC(String name, String dialog, String welcomeText, boolean isSpoken, boolean isImportant) {
+    public NPC(NPCEnum type, String name, String dialog, String welcomeText, boolean isSpoken, boolean isImportant) {
+        this.type = type;
         this.name = name;
         this.dialog = dialog;
         this.welcomeText = welcomeText;
