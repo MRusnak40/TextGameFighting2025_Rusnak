@@ -1,44 +1,61 @@
 Náměstí miru,0,0,true,true,true,true,"Hlavni namesti kde chybi kamen svetla",true,true,true
+
 listOfEnemies:null
 listOfNPCs:VILLIGER,Ochránce,Naši vesnici okradli démoni temnoty o kámen světla a zneuživají jeho energii pro napajení temné síly.Potřebujem aby jsi získal kámen než bude pozdě,Ahoj vítej ve hře Golden hill Poslední odboj,false,true;FARMER,Kněz,Projdi celou vesnici a zab démony.Ale nebude to jednoduché protože démoni zahalili kus města mlhou a budovy v ní se nedají najít.A navíc několik obydlí jsou zabariadované a nebude jednoduché se tam dostat,Ahoj rytíři,false,true
 itemList:null
 keysList:null
+
 Chroptici chyse,0,1,false,false,true,true,"Jsi ve staré  budove stínů",false,true,true
+
 listOfEnemies:DARKKNIGHT,Posluhovač temna,10,4,1,10,15;DARKKNIGHT,Posluhovač temna,10,4,1,10,14
 listOfNPCs:FARMER,Duch,Jsem Duch a pěkně mě to tu šrve. Jsem uvázaný k tomuto místu kvůli těm monstrům pomoz mi a zab všechny demony,BUBUBU,false,false
 itemList:Shield,0,20,0,15,0,true
 keysList:null
+
 Pristresek zaklinace,0,2,false,false,false,true,"Zde se míchají lektvary pro vesnici",false,true,true
+
 listOfEnemies:DARKKNIGHT,Posluhovač temna,10,4,1,10,15;DARKKNIGHT,Posluhovač temna,10,4,1,10,11;SHADOW,Vysávač duše,4,6,8,2,7
 listOfNPCs:VILLIGER,Duch Zaklinače,Černé stíny mě dostali svině ale nakopal jsi jim zadek,Zdárek párek,false,false
 itemList:Plášť zaklínače,10,50,10,10,10,true
 keysList:PAINTING,Napsané souřadnice na zdi,false,true,false,false
+
 Chajda chudeho poutnika,0,-1,false,false,true,true,"Zde bydlí ti nejchudší",false,true,false
+
 listOfEnemies:DARKKNIGHT,Posluhovač temna,10,4,1,10,7;DarkKnight:Posluhovač temna,10,4,1,10,6;SHADOW,Vysávač duše,4,6,8,2,7
 listOfNPCs:WANDERER,Johan místní tulák,Hele mam tu pro tebe domácí meducínu jo a chceš říct vtip. Jo tak řikej HAHAHA ,Si zabil se tim klackem dobře oháníš,false,false;VILLIGER,žena poutníka,běž svýma vtipama strašit jiného kdyť nám tu zachraňuje holej zadek,Se omlouvám za muže,false,false
 itemList:Slivovice,2,-10,10,10,-4,true
 keysList:null
+
 Chata bohateho mlynare,0,-2,false,false,true,false,"Tady se mele všechna mouka",true,true,false
+
 listOfEnemies:DARKKNIGHT,Posluhovač temna,10,4,1,10,10;DARKKNIGHT,Posluhovač temna,10,4,1,10,10;SHADOW,Vysávač duše,4,6,8,2,7
 listOfNPCs:VILLIGER,Bohatý sedlák,Moje zlatáky jsou pro mě duležité a proto ti dám něco co nepotřebuju,Díky moc že jsi ty svině zabil,false,false
 itemList:Kouzelná čepice,10,0,10,5,5,true;Pantofle,0,50,0,0,3,true
 keysList:KEY,Klíček od budovy kam nikdo nechce,true,true,false,false
+
 Zbytek ohorele chaty,1,0,true,true,false,false,"Zde se tala velká nehoda",true,false,false
+
 listOfEnemies:DARKKNIGHT,Posluhovač temna,10,4,1,10,3;SHADOW,Vysávač duše,4,6,8,2,4
 listOfNPCs:VILLIGER,Bába kořenářka,Skvěle našel jsi tuto budovu i přes mlhu ale je tu ještě jedna doufám že ji najdeš,Omlouvám se že ruším poutníku,false,true
 itemList:Kopí,10,0,0,4,0,true;Kalhoty,0,10,0,6,2,true
 keysList:KEY,Klíč od přístřešku zaklinače,true,true,false,false
+
 Zbrojnice,2,0,true,false,false,false,"Zde byly všechny zbraně",true,false
+
 listOfEnemies:DARKKNIGHT,Posluhovač temna,10,4,1,10,35
-listOfNPCs:DARKKNIGHT,Jsi mě málem trefil jak se tu oháníš tim mečem,Dal ti zabrat co,false,false;Guard:Ochránce světla,Díky za pomoc dokázal jsi to včem jsem já selhal ale ještě neni konec dojdi zpět na náměstí a vrať kámen,Ahoj,false,true
+listOfNPCs:VILLIGER,Jsi mě málem trefil jak se tu oháníš tim mečem,Dal ti zabrat co,false,false;Guard:Ochránce světla,Díky za pomoc dokázal jsi to včem jsem já selhal ale ještě neni konec dojdi zpět na náměstí a vrať kámen,Ahoj,false,true
 itemList:null
 keysList:KEY,Kámen světla,true,true,false,false
+
 Kostel,-1,0,true,true,false,false,"Dům svatý",true,true,false
+
 listOfEnemies:SHADOW,Vysávač duše,4,6,8,2,1
 listOfNPCs:GUARD,Železný ochrance,Děkuji že jsi zabil démony,Bratře!,false,false
 itemList:Meč,4,0,5,-1,true;čepec,0,10,0,2,0,ture
 keysList:null
+
 Sklad,-2,0,false,true,false,false,"Uschovna obilí",true,true,false
+
 listOfEnemies:SHADOW,Vysávač duše,4,6,8,2,2;Shadow:Vysávač duše,4,6,8,2,1
 listOfNPCs:WANDERER,Tulák,Je tu mapa Která ti pomuže najít cestu v mlze do další budovy,Ahoj,false,false
 itemList:Boty,0,0,0,1,3,true;Kniha,0,5,6,0,0,true
@@ -46,13 +63,14 @@ keysList:MAP,Archivařská mapa,false,true,false,false
 
 
 
-Náměstí miru,0,0,true,true,true,true,"Hlavni namesti kde chybi kamen svetla",true,true,true,listOfEnemies:null,listOfNPCs:Wandarer:Ochránce,Naši vesnici okradli démoni temnoty o kámen světla a zneuživají jeho energii pro napajení temné síly.Potřebujem aby jsi získal kámen než bude pozdě,Ahoj vítej ve hře Golden hill Poslední odboj,false,true;Farmer:Kněz,Projdi celou vesnici a zab démony.Ale nebude to jednoduché protože démoni zahalili kus města mlhou a budovy v ní se nedají najít.A navíc několik obydlí jsou zabariadované a nebude jednoduché se tam dostat,Ahoj rytíři,false,true,itemList:null,keysList:null
-Chroptici chyse,0,1,false,false,true,true,"Jsi ve staré budove stínů",false,true,true,listOfEnemies:DarkKnight:Posluhovač temna,10,4,1,10,15;DarkKnight:Posluhovač temna,10,4,1,10,14,listOfNPCs:Villiger:Duch,Jsem Duch a pěkně mě to tu šrve. Jsem uvázaný k tomuto místu kvůli těm monstrům pomoz mi a zab všechny demony,BUBUBU,false,false,itemList:Shield,0,20,0,15,0,true,keysList:null
-Pristresek zaklinace,0,2,false,false,false,true,"Zde se míchají lektvary pro vesnici",false,true,true,listOfEnemies:DarkKnight:Posluhovač temna,10,4,1,10,15;DarkKnight:Posluhovač temna,10,4,1,10,11;Shadow:Vysávač duše,4,6,8,2,7,listOfNPCs:Villiger:Duch Zaklinače,Černé stíny mě dostali svině ale nakopal jsi jim zadek,Zdárek párek,false,false,itemList:Plášť zaklínače,10,50,10,10,10,true,keysList:Painting:Napsané souřadnice na zdi,false,true,false,false
-Chajda chudeho poutnika,0,-1,false,false,true,true,"Zde bydlí ti nejchudší",false,true,false,listOfEnemies:DarkKnight:Posluhovač temna,10,4,1,10,7;DarkKnight:Posluhovač temna,10,4,1,10,6;Shadow:Vysávač duše,4,6,8,2,7,listOfNPCs:Wanderer:Johan místní tulák,Hele mam tu pro tebe domácí meducínu jo a chceš říct vtip. Jo tak řikej HAHAHA ,Si zabil se tim klackem dobře oháníš,false,false;Villiger:žena poutníka,běž svýma vtipama strašit jiného kdyť nám tu zachraňuje holej zadek,Se omlouvám za muže,false,false,itemList:Slivovice,2,-10,10,10,-4,true,keysList:null
-Chata bohateho mlynare,0,-2,false,false,true,false,"Tady se mele všechna mouka",true,true,false,listOfEnemies:DarkKnight:Posluhovač temna,10,4,1,10,10;DarkKnight:Posluhovač temna,10,4,1,10,10;Shadow:Vysávač duše,4,6,8,2,7,listOfNPCs:Villiger:Bohatý sedlák,Moje zlatáky jsou pro mě duležité a proto ti dám něco co nepotřebuju,Díky moc že jsi ty svině zabil,false,false,itemList:Kouzelná čepice,10,0,10,5,5,true;Pantofle,0,50,0,0,3,true,keysList:Klíček od budovy kam nikdo nechce,true,true,false,false
-zbytek ohorele chaty,1,0,true,true,false,false,"Zde se tala velká nehoda",true,false,false,listOfEnemies:DarkKnight:Posluhovač temna,10,4,1,10,3;Shadow:Vysávač duše,4,6,8,2,4,listOfNPCs:Villiger:Bába kořenářka,Skvěle našel jsi tuto budovu i přes mlhu ale je tu ještě jedna doufám že ji najdeš,Omlouvám se že ruším poutníku,false,true,itemList:Kopí,10,0,0,4,0,true;Kalhoty,0,10,0,6,2,true,keysList:Key:Klíč od přístřešku zaklinače,true,true,false,false
-Zbrojnice,2,0,true,false,false,false,"Zde byly všechny zbraně",true,false,listOfEnemies:DarkKnight:Posluhovač temna,10,4,1,10,35,listOfNPCs:Farmer:Jsi mě málem trefil jak se tu oháníš tim mečem,Dal ti zabrat co,false,false;Guard:Ochránce světla,Díky za pomoc dokázal jsi to včem jsem já selhal ale ještě neni konec dojdi zpět na náměstí a vrať kámen,Ahoj,false,true,itemList:null,keysList:Key:Kámen světla,true,true,false,false
-Kostel,-1,0,true,true,false,false,"Dům svatý",true,true,false,listOfEnemies:Shadow:Vysávač duše,4,6,8,2,1,listOfNPCs:Guard:Železný ochrance,Děkuji že jsi zabil démony,Bratře!,false,false,itemList:Meč,4,0,5,-1,true;čepec,0,10,0,2,0,true,keysList:null
-Sklad,-2,0,false,true,false,false,"Uschovna obilí",true,true,false,listOfEnemies:Shadow:Vysávač duše,4,6,8,2,2;Shadow:Vysávač duše,4,6,8,2,1,listOfNPCs:Warderer:Tulák,Je tu mapa Která ti pomuže najít cestu v mlze do další budovy,Ahoj,false,false,itemList:Boty,0,0,0,1,3,true;Kniha,0,5,6,0,0,true,keysList:Map:Archivařská mapa,false,true,false,false
+Náměstí miru,0,0,true,true,true,true,"Hlavni namesti kde chybi kamen svetla",true,true,true,listOfEnemies:null,listOfNPCs:VILLIGER,Ochránce,Naši vesnici okradli démoni temnoty o kámen světla a zneuživají jeho energii pro napajení temné síly.Potřebujem aby jsi získal kámen než bude pozdě,Ahoj vítej ve hře Golden hill Poslední odboj,false,true;FARMER,Kněz,Projdi celou vesnici a zab démony.Ale nebude to jednoduché protože démoni zahalili kus města mlhou a budovy v ní se nedají najít.A navíc několik obydlí jsou zabariadované a nebude jednoduché se tam dostat,Ahoj rytíři,false,true,itemList:null,keysList:null
+Chroptici chyse,0,1,false,false,true,true,"Jsi ve staré  budove stínů",false,true,true,listOfEnemies:DARKKNIGHT,Posluhovač temna,10,4,1,10,15;DARKKNIGHT,Posluhovač temna,10,4,1,10,14,listOfNPCs:FARMER,Duch,Jsem Duch a pěkně mě to tu štve. Jsem uvázaný k tomuto místu kvůli těm monstrům pomoz mi a zab všechny demony,BUBUBU,false,false,itemList:Shield,0,20,0,15,0,true,keysList:null
+Pristresek zaklinace,0,2,false,false,false,true,"Zde se míchají lektvary pro vesnici",false,true,true,listOfEnemies:DARKKNIGHT,Posluhovač temna,10,4,1,10,15;DARKKNIGHT,Posluhovač temna,10,4,1,10,11;SHADOW,Vysávač duše,4,6,8,2,7,listOfNPCs:VILLIGER,Duch Zaklinače,Černé stíny mě dostali svině ale nakopal jsi jim zadek,Zdárek párek,false,false,itemList:Plášť zaklínače,10,50,10,10,10,true,keysList:PAINTING,Napsané souřadnice na zdi,false,true,false,false
+Chajda chudeho poutnika,0,-1,false,false,true,true,"Zde bydlí ti nejchudší",false,true,false,listOfEnemies:DARKKNIGHT,Posluhovač temna,10,4,1,10,7;DARKKNIGHT,Posluhovač temna,10,4,1,10,6;SHADOW,Vysávač duše,4,6,8,2,7,listOfNPCs:WANDERER,Johan místní tulák,Hele mam tu pro tebe domácí meducínu jo a chceš říct vtip. Jo tak řikej HAHAHA ,Si zabil se tim klackem dobře oháníš,false,false;VILLIGER,žena poutníka,běž svýma vtipama strašit jiného kdyť nám tu zachraňuje holej zadek,Se omlouvám za muže,false,false,itemList:Slivovice,2,-10,10,10,-4,true,keysList:null
+Chata bohateho mlynare,0,-2,false,false,true,false,"Tady se mele všechna mouka",true,true,false,listOfEnemies:DARKKNIGHT,Posluhovač temna,10,4,1,10,10;DARKKNIGHT,Posluhovač temna,10,4,1,10,10;SHADOW,Vysávač duše,4,6,8,2,7,listOfNPCs:VILLIGER,Bohatý sedlák,Moje zlatáky jsou pro mě důležité a proto ti dám něco co nepotřebuju,Díky moc že jsi ty svině zabil,false,false,itemList:Kouzelná čepice,10,0,10,5,5,true;Pantofle,0,50,0,0,3,true,keysList:KEY,Klíček od budovy kam nikdo nechce,true,true,false,false
+Zbytek ohorele chaty,1,0,true,true,false,false,"Zde se stala velká nehoda",true,false,false,listOfEnemies:DARKKNIGHT,Posluhovač temna,10,4,1,10,3;SHADOW,Vysávač duše,4,6,8,2,4,listOfNPCs:VILLIGER,Bába kořenářka,Skvěle našel jsi tuto budovu i přes mlhu ale je tu ještě jedna doufám že ji najdeš,Omlouvám se že ruším poutníku,false,true,itemList:Kopí,10,0,0,4,0,true;Kalhoty,0,10,0,6,2,true,keysList:KEY,Klíč od přístřešku zaklinače,true,true,false,false
+Zbrojnice,2,0,true,false,false,false,"Zde byly všechny zbraně",true,false,listOfEnemies:DARKKNIGHT,Posluhovač temna,10,4,1,10,35,listOfNPCs:DARKKNIGHT,Jsi mě málem trefil jak se tu oháníš tim mečem,Dal ti zabrat co,false,false;Guard,Ochránce světla,Díky za pomoc dokázal jsi to včem jsem já selhal ale ještě neni konec dojdi zpět na náměstí a vrať kámen,Ahoj,false,true,itemList:null,keysList:KEY,Kámen světla,true,true,false,false
+Kostel,-1,0,true,true,false,false,"Dům svatý",true,true,false,listOfEnemies:SHADOW,Vysávač duše,4,6,8,2,1,listOfNPCs:GUARD,Železný ochrance,Děkuji že jsi zabil démony,Bratře!,false,false,itemList:Meč,4,0,5,-1,true;čepec,0,10,0,2,0,true,keysList:null
+Sklad,-2,0,false,true,false,false,"Uschovna obilí",true,true,false,listOfEnemies:SHADOW,Vysávač duše,4,6,8,2,2;SHADOW,Vysávač duše,4,6,8,2,1,listOfNPCs:WANDERER,Tulák,Je tu mapa Která ti pomuže najít cestu v mlze do další budovy,Ahoj,false,false,itemList:Boty,0,0,0,1,3,true;Kniha,0,5,6,0,0,true,keysList:MAP,Archivařská mapa,false,true,false,false
+
 

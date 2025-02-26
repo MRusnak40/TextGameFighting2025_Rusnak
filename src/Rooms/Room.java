@@ -19,13 +19,17 @@ public  class    Room {
     protected boolean isUnlocekd;
     protected boolean isVisible;
     protected boolean wasThere;
+    protected int nuberOfEnemies;
+    protected int numberOfNPCs;
+    protected int numberOfItems;
+    protected int numberOfKeys;
     ArrayList<Enemy> listOfEnemies;
     ArrayList<NPC> listOfNPCs;
     ArrayList<Items> itemsList;
     ArrayList<Keys> keysList;
 
 
-    public Room(String nameOfRoom, int x, int y, boolean isPosibleGoLeft, boolean isPosibleGoRight, boolean isPosibleGoUp, boolean isPosibleGoDown, String description, boolean isUnlocekd, boolean isVisible, boolean wasThere) {
+    public Room(String nameOfRoom, int x, int y, boolean isPosibleGoLeft, boolean isPosibleGoRight, boolean isPosibleGoUp, boolean isPosibleGoDown, String description, boolean isUnlocekd, boolean isVisible, boolean wasThere, int nuberOfEnemies, int numberOfNPCs, int numberOfItems, int numberOfKeys) {
         this.nameOfRoom = nameOfRoom;
         this.x = x;
         this.y = y;
@@ -37,11 +41,46 @@ public  class    Room {
         this.isUnlocekd = isUnlocekd;
         this.isVisible = isVisible;
         this.wasThere = wasThere;
+        this.nuberOfEnemies = nuberOfEnemies;
+        this.numberOfNPCs = numberOfNPCs;
+        this.numberOfItems = numberOfItems;
+        this.numberOfKeys = numberOfKeys;
         this.listOfEnemies = new ArrayList<>();
         this.listOfNPCs = new ArrayList<>();
         this.itemsList = new ArrayList<>();
         this.keysList = new ArrayList<>();
+    }
 
+    public int getNuberOfEnemies() {
+        return nuberOfEnemies;
+    }
+
+    public void setNuberOfEnemies(int nuberOfEnemies) {
+        this.nuberOfEnemies = nuberOfEnemies;
+    }
+
+    public int getNumberOfNPCs() {
+        return numberOfNPCs;
+    }
+
+    public void setNumberOfNPCs(int numberOfNPCs) {
+        this.numberOfNPCs = numberOfNPCs;
+    }
+
+    public int getNumberOfItems() {
+        return numberOfItems;
+    }
+
+    public void setNumberOfItems(int numberOfItems) {
+        this.numberOfItems = numberOfItems;
+    }
+
+    public int getNumberOfKeys() {
+        return numberOfKeys;
+    }
+
+    public void setNumberOfKeys(int numberOfKeys) {
+        this.numberOfKeys = numberOfKeys;
     }
 
     public String getNameOfRoom() {
@@ -177,6 +216,11 @@ public  class    Room {
                 ", description='" + description + '\'' +
                 ", isUnlocekd=" + isUnlocekd +
                 ", isVisible=" + isVisible +
+                ", wasThere=" + wasThere +
+                ", nuberOfEnemies=" + nuberOfEnemies +
+                ", numberOfNPCs=" + numberOfNPCs +
+                ", numberOfItems=" + numberOfItems +
+                ", numberOfKeys=" + numberOfKeys +
                 ", listOfEnemies=" + listOfEnemies +
                 ", listOfNPCs=" + listOfNPCs +
                 ", itemsList=" + itemsList +

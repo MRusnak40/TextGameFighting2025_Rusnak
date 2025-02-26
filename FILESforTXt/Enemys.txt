@@ -1,0 +1,18 @@
+DARKKNIGHT,Posluhovač temna,10,4,1,10,15
+DARKKNIGHT,Posluhovač temna,10,4,1,10,14
+DARKKNIGHT,Posluhovač temna,10,4,1,10,15
+DARKKNIGHT,Posluhovač temna,10,4,1,10,11
+SHADOW,Vysávač duše,4,6,8,2,7
+DARKKNIGHT,Posluhovač temna,10,4,1,10,7
+DARKKNIGHT,Posluhovač temna,10,4,1,10,6
+SHADOW,Vysávač duše,4,6,8,2,7
+DARKKNIGHT,Posluhovač temna,10,4,1,10,10
+DARKKNIGHT,Posluhovač temna,10,4,1,10,10
+SHADOW,Vysávač duše,4,6,8,2,7
+DARKKNIGHT,Posluhovač temna,10,4,1,10,3
+SHADOW,Vysávač duše,4,6,8,2,4
+DARKKNIGHT,Posluhovač temna,10,4,1,10,3
+SHADOW,Vysávač duše,4,6,8,2,1
+SHADOW,Vysávač duše,4,6,8,2,2
+SHADOW,Vysávač duše,4,6,8,2,1
+

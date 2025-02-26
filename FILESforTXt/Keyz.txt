@@ -1,0 +1,5 @@
+PAINTING,Napsané souřadnice na zdi,false,true,false,false
+KEY,Klíček od budovy kam nikdo nechce,true,true,false,false
+KEY,Klíč od přístřešku zaklinače,true,true,false,false
+KEY,Kámen světla,true,true,false,false
+MAP,Archivařská mapa,false,true,false,false

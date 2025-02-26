@@ -12,8 +12,8 @@ ArrayList<Room>rooms = new ArrayList<>();
 private String filepath="Rooms.txt" ;
 
 public void game(){
-GameLoading g = new GameLoading();
-rooms=GameLoading.loadRoomsFromFile(filepath);
+GameLoadingData g = new GameLoadingData();
+rooms=g.loadRoomsFromFile(filepath);
 
     System.out.println("---------------------------");
     // Check if rooms were loaded successfully
@@ -23,6 +23,7 @@ rooms=GameLoading.loadRoomsFromFile(filepath);
     } else {
         System.out.println("No rooms were loaded. Please check the file path and format.");
     }
+
 }
 
 
@@ -31,7 +32,10 @@ public void play(){
  game();
 
     System.out.println("-------------");
-    System.out.println(rooms);
+    for(Room room : rooms){
+        System.out.println(room);
+
+    }
 
 }
 
