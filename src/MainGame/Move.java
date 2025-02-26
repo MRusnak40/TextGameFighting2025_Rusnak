@@ -12,4 +12,7 @@ public class Move extends Command{
     public boolean exit() {
         return false;
     }
+
+
+
 }
