@@ -12,7 +12,12 @@ public class Invertory {
     ArrayList<Keys>kliceBatoh;
 
 
+public void addToInvenoty(){}
 
+    public void setBonusesForItems(){}
+
+
+    public void ThrowItem(){}
 
 
 

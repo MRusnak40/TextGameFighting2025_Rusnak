@@ -15,4 +15,10 @@ public class TalkToNPC extends Command {
         return false;
     }
 
+
+
+
+    public void talking(){}
+
+
 }

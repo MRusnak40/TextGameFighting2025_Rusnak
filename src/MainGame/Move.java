@@ -5,6 +5,7 @@ public class Move extends Command{
 
     @Override
     public String execute() {
+
         return "";
     }
 
@@ -12,6 +13,16 @@ public class Move extends Command{
     public boolean exit() {
         return false;
     }
+
+
+
+
+public void controllingPosition(){}
+
+public void setPosition(){
+
+}
+
 
 
 
