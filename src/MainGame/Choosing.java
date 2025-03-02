@@ -1,5 +1,8 @@
 package MainGame;
 
+import AtributesOfPlayer.PickUp;
+import AtributesOfPlayer.TalkToNPC;
+
 import java.util.HashMap;
 
 public class Choosing {
@@ -8,7 +11,11 @@ public class Choosing {
 
 //pridavam do has mapy
 public void inicializace(){
-
+mapa.put("talk",new TalkToNPC());
+mapa.put("walk",new Move());
+mapa.put("pickUp",new PickUp());
+mapa.put("help",new Help());
+mapa.put("exit",new Exit());
 
 
 }

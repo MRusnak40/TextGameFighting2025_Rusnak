@@ -4,10 +4,10 @@ import Character.*;
 import NPCs.Enemy;
 
 public class Fight extends Command{
-    Game game;
+    Move game;
     @Override
     public String execute() {
-        game.play();
+
         return "";
     }
 
