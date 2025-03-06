@@ -20,6 +20,30 @@ protected boolean isImportant;
         this.isImportant = isImportant;
     }
 
+    public NPCEnum getType() {
+        return type;
+    }
+
+    public void setType(NPCEnum type) {
+        this.type = type;
+    }
+
+    public boolean isSpoken() {
+        return isSpoken;
+    }
+
+    public void setSpoken(boolean spoken) {
+        isSpoken = spoken;
+    }
+
+    public boolean isImportant() {
+        return isImportant;
+    }
+
+    public void setImportant(boolean important) {
+        isImportant = important;
+    }
+
     public String getName() {
         return name;
     }

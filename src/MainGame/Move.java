@@ -156,6 +156,14 @@ public class Move extends Command {
         isMoved = moved;
     }
 
+    public ArrayList<Room> getRooms() {
+        return rooms;
+    }
+
+    public void setRooms(ArrayList<Room> rooms) {
+        this.rooms = rooms;
+    }
+
     public Room getCurrentRoom() {
         return currentRoom;
     }

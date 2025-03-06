@@ -4,7 +4,8 @@ import Character.*;
 import NPCs.Enemy;
 
 public class Fight extends Command{
-
+Postava postava;
+Enemy enemy;
     @Override
     public String execute() {
 
@@ -20,7 +21,7 @@ public class Fight extends Command{
 
 
 
-    public void fighting(Postava p, Enemy e){
+    public void fighting(){
 
     }
     public void Hits(){}
