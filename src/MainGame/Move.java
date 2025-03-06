@@ -15,6 +15,7 @@ public class Move extends Command{
 
     @Override
     public String execute() {
+        moving();
         return "";
     }
 

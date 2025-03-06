@@ -32,13 +32,15 @@ public abstract class Enemy  {
         return inteligence+obratnost+odolnost+level;
 
     };
-
+/*
     public abstract double setInteligence();
     public abstract double setObratnost();
     public abstract double setSila();
     public abstract double setLevel();
     public abstract double setOdolnost();
 
+
+ */
 
     public String getJmeno() {
         return jmeno;

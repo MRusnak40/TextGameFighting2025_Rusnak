@@ -6,7 +6,7 @@ public class Shadow extends Enemy {
     public Shadow(EnemyEnum type, String jmeno, double sila, double inteligence, double obratnost, double odolnost, int level) {
         super(type, jmeno, sila, inteligence, obratnost, odolnost, level);
     }
-
+/*
     @Override
     public double setInteligence() {
         return 0;
@@ -32,5 +32,7 @@ public class Shadow extends Enemy {
         return 0;
     }
 
+
+ */
 
 }

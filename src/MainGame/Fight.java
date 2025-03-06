@@ -4,7 +4,7 @@ import Character.*;
 import NPCs.Enemy;
 
 public class Fight extends Command{
-    Move game;
+
     @Override
     public String execute() {
 
