@@ -1,8 +1,10 @@
 package NPCs;
 
 import java.io.Serializable;
+import java.util.Random;
 
 public abstract class Enemy  {
+    Random random=new Random();
     protected EnemyEnum type;
     protected String jmeno;
     protected double sila;
@@ -26,9 +28,11 @@ public abstract class Enemy  {
 
 
     public  double getUtok(){
+
         return sila+inteligence+obratnost+level;
     };
     public  double getObrana(){
+
         return inteligence+obratnost+odolnost+level;
 
     };
