@@ -25,8 +25,9 @@ public abstract class Postava {
         this.odolnost = odolnost;
         this.level = level;
         this.rasa = rasa;
-        this.maxHealth = 100;
-        this.currentHealth = 100;
+        this.maxHealth = maxHealth;
+        this.currentHealth = currentHealth;
+
     }
 
     public Postava(String jmeno, double sila, double inteligence, double obratnost, double odolnost, IRasa rasa) {
@@ -37,7 +38,8 @@ public abstract class Postava {
         this.odolnost = odolnost;
         this.level = 1;
         this.rasa = rasa;
-
+        this.maxHealth = 100;
+        this.currentHealth = 100;
     }
 
     public static Postava vvberPostavy(int choosedNumber) {

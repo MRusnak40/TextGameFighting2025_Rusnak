@@ -38,7 +38,7 @@ public class SetCharacter {
         postava = Postava.vvberPostavy(vyberPsotava);
         System.out.println("AKTUALNI STAV:");
         System.out.println(postava);
-
+        sc.nextLine();
 
     }
 

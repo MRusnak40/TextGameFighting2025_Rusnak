@@ -8,8 +8,8 @@ public class Main {
     public static void main(String[] args) {
 Move move=new Move();
         Gameos gameos=new Gameos();
-        SetCharacter lobby=new SetCharacter();
 
+gameos.gameLoop();
 //gameos.gameLoop();
 
 

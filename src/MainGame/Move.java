@@ -5,13 +5,14 @@ import Rooms.Room;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Move extends Command{
+public class Move extends Command {
     private Room currentRoom;
     private int curretX = 0;
     private int curretY = 0;
     Scanner scanner = new Scanner(System.in);
     ArrayList<Room> rooms = new ArrayList<>();
     //private String filepath = "Rooms.txt";
+    public boolean isMoved;
 
     @Override
     public String execute() {
@@ -46,27 +47,26 @@ public class Move extends Command{
  */
 
     public void moving() {
-       // game();
-
+        // game();
+/*
         System.out.println("-------------");
         for (Room room : rooms) {
             System.out.println(room);
         }
 
-        currentRoom = rooms.get(0);
+
+ */
+
+
         System.out.println(" ");
-        System.out.println(" ");
-        System.out.println(" ");
-        while (true) {
-            System.out.println("Kam chces jit ");
-            setDirection(scanner.nextLine());
-            System.out.println(currentRoom);
-        }
+        System.out.println(currentRoom.getNameOfRoom() + " Popis: " + currentRoom.getDescription() + " X: " + currentRoom.getX() + " Y:" + currentRoom.getY());
+        System.out.println("Kam chces jit: ");
+        setDirection(scanner.nextLine());
+
     }
 
 
     public void setDirection(String direction) {
-
 
 
         int prevX = curretX;
@@ -93,18 +93,22 @@ public class Move extends Command{
         if (!controllingPossibilites()) {
             curretX = prevX;
             curretY = prevY;
+            System.out.println("ZKUS JINAM TUDY NE!");
+            System.out.println("   ");
+            isMoved = false;
+        } else {
+            isMoved = true;
         }
+
     }
-
-
-
 
 
     public boolean controllingPossibilites() {
         int index = 0;
+        int counting = 0;
         for (Room room : rooms) {
             index++;
-
+            counting++;
 
             if (curretX == room.getX() && curretY == room.getY()) {
 
@@ -136,13 +140,20 @@ public class Move extends Command{
                 }
 
 
-            } else {
-
             }
+
 
         }
 
         return false;
+    }
+
+    public boolean isMoved() {
+        return isMoved;
+    }
+
+    public void setMoved(boolean moved) {
+        isMoved = moved;
     }
 
     public Room getCurrentRoom() {
@@ -168,7 +179,6 @@ public class Move extends Command{
     public void setCurretY(int curretY) {
         this.curretY = curretY;
     }
-
 
 
     @Override

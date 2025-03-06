@@ -408,6 +408,16 @@ loadComponents();
 
     }
 
+
+
+    public static StringBuilder loadStory(){
+        StringBuilder story=new StringBuilder();
+
+
+
+
+        return story;
+    }
     public ArrayList<Enemy> getEnemies() {
         return enemies;
     }
