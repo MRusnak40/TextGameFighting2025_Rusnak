@@ -1,11 +1,14 @@
 package NPCs;
 
+import java.util.Random;
+
 public class Shadow extends Enemy {
-
-
-    public Shadow(EnemyEnum type, String jmeno, double sila, double inteligence, double obratnost, double odolnost, int level) {
-        super(type, jmeno, sila, inteligence, obratnost, odolnost, level);
+    public Shadow( EnemyEnum type, String jmeno, double sila, double inteligence, double obratnost, double odolnost, int level, double hp) {
+        super( type, jmeno, sila, inteligence, obratnost, odolnost, level, hp);
     }
+
+
+
 /*
     @Override
     public double setInteligence() {

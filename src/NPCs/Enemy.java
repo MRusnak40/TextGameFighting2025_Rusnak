@@ -12,8 +12,9 @@ public abstract class Enemy  {
     protected double obratnost;
     protected double odolnost;
     protected int level;
+protected double hp;
 
-    public Enemy(EnemyEnum type, String jmeno, double sila, double inteligence, double obratnost, double odolnost, int level) {
+    public Enemy( EnemyEnum type, String jmeno, double sila, double inteligence, double obratnost, double odolnost, int level, double hp) {
         this.type = type;
         this.jmeno = jmeno;
         this.sila = sila;
@@ -21,11 +22,8 @@ public abstract class Enemy  {
         this.obratnost = obratnost;
         this.odolnost = odolnost;
         this.level = level;
+        this.hp = hp;
     }
-
-
-
-
 
     public  double getUtok(){
 
@@ -45,6 +43,14 @@ public abstract class Enemy  {
 
 
  */
+
+    public double getHp() {
+        return hp;
+    }
+
+    public void setHp(double hp) {
+        this.hp = hp;
+    }
 
     public String getJmeno() {
         return jmeno;

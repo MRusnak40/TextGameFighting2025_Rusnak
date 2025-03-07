@@ -320,7 +320,8 @@ loadComponents();
                                     Double.parseDouble(enemyData[3]),
                                     Double.parseDouble(enemyData[4]),
                                     Double.parseDouble(enemyData[5]),
-                                    Integer.parseInt(enemyData[6])
+                                    Integer.parseInt(enemyData[6]),
+                                    Double.parseDouble(enemyData[7])
                             );
                             break;
                         case DARKKNIGHT:
@@ -331,7 +332,9 @@ loadComponents();
                                     Double.parseDouble(enemyData[3]),
                                     Double.parseDouble(enemyData[4]),
                                     Double.parseDouble(enemyData[5]),
-                                    Integer.parseInt(enemyData[6])
+                                    Integer.parseInt(enemyData[6]),
+                                    Double.parseDouble(enemyData[7])
+
                             );
                             break;
                         default:

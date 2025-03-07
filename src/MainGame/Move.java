@@ -62,6 +62,8 @@ public class Move extends Command {
         System.out.println(currentRoom.getNameOfRoom() + " Popis: " + currentRoom.getDescription() + " X: " + currentRoom.getX() + " Y:" + currentRoom.getY());
         System.out.println("Kam chces jit: ");
         setDirection(scanner.nextLine());
+        System.out.println(currentRoom.getNameOfRoom() + " Popis: " + currentRoom.getDescription() + " X: " + currentRoom.getX() + " Y:" + currentRoom.getY());
+
 
     }
 
