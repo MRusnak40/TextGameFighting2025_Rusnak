@@ -89,6 +89,7 @@ public class Move extends Command {
                 break;
             default:
                 System.out.println("Neplatný směr!");
+
                 return;
         }
 

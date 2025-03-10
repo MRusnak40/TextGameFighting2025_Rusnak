@@ -40,20 +40,20 @@ public class PickUp extends Command {
             System.out.println(move.getCurrentRoom().getItemsList());
             System.out.println("-------------");
             System.out.println("Vyber co odeberes ze sveho inventare");
-            System.out.println("vyber 1 az "+invertory.veciBatoh.size()+1);
+            System.out.println("vyber 0 az "+invertory.veciBatoh.size());
             System.out.println(" VYBER:");
             vyber=scanner.nextInt();
             System.out.println("-------------");
             System.out.println("Vyber co si vezmes z Mistnosti");
-            System.out.println("vyber 1 az "+move.getCurrentRoom().getItemsList().size()+1);
+            System.out.println("vyber  az "+move.getCurrentRoom().getItemsList().size());
             System.out.println(" VYBER:");
             vyber2= scanner.nextInt();
 
-            invertory.replaceItem(vyber-1,vyber2-1);
+            invertory.replaceItem(vyber,vyber2);
 
         } else {
             System.out.println("Co si chces vzit do inventare");
-            System.out.println("vyber 1 az "+move.getCurrentRoom().getItemsList().size()+1);
+            System.out.println("vyber 0 az "+move.getCurrentRoom().getItemsList().size());
             System.out.println(" ---------");
             vyber=scanner.nextInt();
             invertory.addToInvenoty(vyber);

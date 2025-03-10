@@ -1,5 +1,7 @@
 package MainGame;
 
+import AtributesOfPlayer.Invertory;
+import AtributesOfPlayer.PickUp;
 import AtributesOfPlayer.SetCharacter;
 import Rooms.Room;
 
@@ -10,10 +12,10 @@ public class Gameos {
     protected String direction;
     private String filepath = "Rooms.txt";
     ArrayList<Room> roomes = new ArrayList<>();
-    Move move = new Move();
+    Move move;
     Scanner scanner = new Scanner(System.in);
-
-
+PickUp pickUp= new PickUp();
+Choosing choose = new Choosing();
     public void loadGame() {
 
         GameLoadingData g = new GameLoadingData();
@@ -49,9 +51,10 @@ public class Gameos {
 
         System.out.println("GAME HAS STARTED");
         setCharacter();
-        while(move.isMoved==false) {
-            move.execute();
+        while (true) {
+            choose.start();
         }
+
     }
 
 

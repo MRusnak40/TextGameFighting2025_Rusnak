@@ -15,7 +15,7 @@ Scanner scanner = new Scanner(System.in);
 public void inicializace(){
 mapa.put("talk",new TalkToNPC());
 mapa.put("walk",new Move());
-mapa.put("pickUp",new PickUp());
+mapa.put("pickup",new PickUp());
 mapa.put("help",new Help());
 mapa.put("exit",new Exit());
 
