@@ -15,13 +15,13 @@ gameos.gameLoop();
 
 
 /*
-chyby
+chyby a tipy
 
-Rooms.txt budu nacitat vse krome odkazu na  na vedlejsi tridy
-Move saving asi ne
-Items, enemies i keys budou nahrany spolecne s rooms
-Jestli Keys Items Npc maji byt abstract nebo ne
-keys spis jo Enemies taky Npc spis ne
+-Klice by mohli zustavat v mistnostech a hrac by si je mohl brat az pozdeji
+- inventar pocita pouze ze spravnyma vstupama
+-Chyba v praci s tridama
+
+
  */
         }
     }

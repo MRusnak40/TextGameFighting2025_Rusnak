@@ -11,8 +11,8 @@ public class Invertory {
     protected int MaxVeci;
     protected int MaxKeys;
     Postava postava;
-    ArrayList<Items> veciBatoh=new ArrayList<>();
-    ArrayList<Keys> kliceBatoh=new ArrayList<>();
+    ArrayList<Items> veciBatoh = new ArrayList<>();
+    ArrayList<Keys> kliceBatoh = new ArrayList<>();
     Move move;
 
     public void addToInvenoty(int vecDoInventare) {
@@ -20,7 +20,7 @@ public class Invertory {
         System.out.println(" Vec byla pridana");
         System.out.println("VEC:\n" + move.getCurrentRoom().getItemsList().get(vecDoInventare));
         veciBatoh.add(move.getCurrentRoom().getItemsList().remove(vecDoInventare));
-setBonusesForItems();
+        setBonusesForItems();
 
     }
 
@@ -37,6 +37,7 @@ setBonusesForItems();
         }
 
     }
+
     public void disableBonusesForItems() {
 
 
@@ -53,5 +54,23 @@ setBonusesForItems();
         setBonusesForItems();
     }
 
+    public void leaveItems() {
+
+
+    }
+
+    public void pickUpKeys(int vyber) {
+        System.out.println("*****************");
+        if (vyber <= move.getCurrentRoom().getKeysList().size()) {
+
+            kliceBatoh.add(move.getCurrentRoom().getKeysList().remove(vyber));
+            System.out.println("Klic byl PRIDAN");
+
+        } else {
+            System.out.println("Klic se nenachazi na tomto miste v inventari ");
+            return;
+        }
+
+    }
 
 }

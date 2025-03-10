@@ -14,7 +14,7 @@ public class Gameos {
     ArrayList<Room> roomes = new ArrayList<>();
     Move move;
     Scanner scanner = new Scanner(System.in);
-PickUp pickUp= new PickUp();
+
 Choosing choose = new Choosing();
     public void loadGame() {
 
@@ -51,10 +51,7 @@ Choosing choose = new Choosing();
 
         System.out.println("GAME HAS STARTED");
         setCharacter();
-        while (true) {
-            choose.start();
-        }
-
+       choose.start();
     }
 
 
