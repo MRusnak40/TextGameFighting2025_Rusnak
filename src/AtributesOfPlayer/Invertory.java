@@ -46,11 +46,15 @@ public class Invertory {
 
     public void replaceItem(int numberOfItemOnInventory, int itemOfRoom) {
         System.out.println("Vec byla odstranena " + veciBatoh.get(numberOfItemOnInventory));
+        //pridani codu pro to aby to odecetlo hodnoty odebranych predmetu
+
+
+
         veciBatoh.remove(numberOfItemOnInventory);
         System.out.println("             ");
         System.out.println("Pridal jsis do inventare");
         System.out.println(move.getCurrentRoom().getItemsList().get(itemOfRoom));
-        veciBatoh.add(move.getCurrentRoom().getItemsList().get(itemOfRoom));
+        veciBatoh.add(move.getCurrentRoom().getItemsList().remove(itemOfRoom));
         setBonusesForItems();
     }
 

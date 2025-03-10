@@ -20,7 +20,7 @@ chyby a tipy
 -Klice by mohli zustavat v mistnostech a hrac by si je mohl brat az pozdeji
 - inventar pocita pouze ze spravnyma vstupama
 -Chyba v praci s tridama
-
+-kdyz odeberu item zustanou mi tam  ty schopnosti potrebuju je odebirat s predmetem
 
  */
         }
