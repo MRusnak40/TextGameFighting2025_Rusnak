@@ -22,6 +22,11 @@ public class PickUp extends Command {
         return false;
     }
 
+    public PickUp(Move move) {
+        this.move = move;
+
+
+    }
 
     public void workingWithInventory() {
 

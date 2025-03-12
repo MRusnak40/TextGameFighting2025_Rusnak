@@ -10,7 +10,7 @@ public class Move extends Command {
     private int curretX = 0;
     private int curretY = 0;
     Scanner scanner = new Scanner(System.in);
-    ArrayList<Room> rooms = new ArrayList<>();
+    ArrayList<Room> rooms=new ArrayList<>() ;
     //private String filepath = "Rooms.txt";
     public boolean isMoved;
 
@@ -24,10 +24,15 @@ public class Move extends Command {
     public boolean exit() {
         return false;
     }
-
-
-
 /*
+    public Move() {
+
+        this.rooms=new ArrayList<>();
+    }
+
+ */
+
+   /*
     public void game() {
         GameLoadingData g = new GameLoadingData();
         rooms = g.loadRoomsFromFile(filepath);

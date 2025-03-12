@@ -13,7 +13,7 @@ public class Help extends Command{
 
   public String getHelp() {
 
-      return "Commands:\n talk\n walk \n pickUp \n help \n exit ";
+      return "Commands:\n talk\n walk \n pickUp \n help \n exit  \n fight ";
   }
 
 }

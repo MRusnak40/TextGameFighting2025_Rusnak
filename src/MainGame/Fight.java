@@ -16,6 +16,12 @@ public class Fight extends Command {
     ArrayList<Enemy> deadEnemies = new ArrayList<>();
     Random random = new Random();
 
+    public Fight(Postava postava,  Move move) {
+        this.postava = postava;
+
+        this.move = move;
+    }
+
     @Override
     public String execute() {
         fighting();

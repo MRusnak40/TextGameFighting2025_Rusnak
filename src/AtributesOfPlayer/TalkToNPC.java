@@ -19,6 +19,10 @@ public class TalkToNPC extends Command {
         return false;
     }
 
+    public TalkToNPC(Move move) {
+        this.move = move;
+
+    }
 
     public void talking() {
         for(int i=0;i<move.getCurrentRoom().getListOfNPCs().size();i++){

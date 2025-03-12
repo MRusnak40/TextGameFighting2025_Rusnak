@@ -10,7 +10,7 @@ public class SetCharacter {
 
     Scanner sc = new Scanner(System.in);
 
-    public void setNameOfCharacter() {
+    public Postava setNameOfCharacter() {
         //vyber postavy
         boolean vyber = true;
         int vyberPsotava = 0;
@@ -38,8 +38,12 @@ public class SetCharacter {
         postava = Postava.vvberPostavy(vyberPsotava);
         System.out.println("AKTUALNI STAV:");
         System.out.println(postava);
-        sc.nextLine();
 
+        sc.nextLine();
+return postava;
     }
 
+    public SetCharacter(Postava postava) {
+        this.postava = postava;
+    }
 }
