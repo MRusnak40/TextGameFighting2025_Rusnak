@@ -22,6 +22,8 @@ Scanner scanner=new Scanner(System.in);
         return false;
     }
 
+
+
     public TalkToNPC(Move move) {
         this.move = move;
 
