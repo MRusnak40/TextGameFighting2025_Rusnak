@@ -10,7 +10,7 @@ import NPCs.Enemy;
 
 public class Choosing {
 Scanner scanner = new Scanner(System.in);
-    private boolean exit = false;
+     boolean exit = false;
     private HashMap<String, Command> mapa = new HashMap<>();
 Postava postava;
 Enemy enemy;
@@ -23,6 +23,7 @@ mapa.put("pickup",new PickUp(move));
 mapa.put("help",new Help());
 mapa.put("exit",new Exit());
 mapa.put("fight",new Fight(postava,move));
+mapa.put("rules",new Rules());
 
 }
 
@@ -35,7 +36,7 @@ mapa.put("fight",new Fight(postava,move));
     //zadavam coomand co budu delat
     //klic zadavam
 public void doCommand(){
-    System.out.print(">>");
+    System.out.print("ZADEJ AKCI-->>");
     String prikaz = scanner.nextLine();
     prikaz = prikaz.trim();
     prikaz = prikaz.toLowerCase();
@@ -47,9 +48,10 @@ public void doCommand(){
         System.out.println(">> Nedefinovany prikaz");
     }
 }
-//cyklus hry volam inicializace a doCommand
+//cyklus hry volam  a doCommand
+    /*
 public void start(){
-inicializace();
+
     try{
         do{
             doCommand();
@@ -59,6 +61,8 @@ inicializace();
         System.out.println(e.getMessage());
     }
 }
+
+     */
 
 
 

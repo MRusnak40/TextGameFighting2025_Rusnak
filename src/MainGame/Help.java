@@ -13,7 +13,7 @@ public class Help extends Command{
 
   public String getHelp() {
 
-      return "Commands:\n talk\n walk \n pickUp \n help \n exit  \n fight ";
+      return "Commands:\n talk-mluveni s NPC\n walk-chozeni \n pickUp-prace s predmetem \n help-vypis commandu \n exit-opustit hru  \n fight-boj s enemzy\n rules-pravidla jak hrat ";
   }
 
 }

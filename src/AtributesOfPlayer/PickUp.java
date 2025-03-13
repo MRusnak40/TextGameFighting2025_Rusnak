@@ -3,6 +3,7 @@ package AtributesOfPlayer;
 import KeysAtributes.Keys;
 import MainGame.Command;
 import MainGame.Move;
+import org.w3c.dom.ls.LSOutput;
 
 import java.util.Scanner;
 
@@ -13,8 +14,9 @@ public class PickUp extends Command {
 
     @Override
     public String execute() {
-        workingWithInventory();
-        return "";
+        invertorying();
+        vypis();
+        return " POCET VECI V BATOHU: " + invertory.veciBatoh.size() + "\n" + "POCET KLICU:" + invertory.kliceBatoh.size();
     }
 
     @Override
@@ -28,11 +30,44 @@ public class PickUp extends Command {
 
     }
 
+    public void vypis() {
+        System.out.println("CHCES VEDET CO MAS V BATOHU😎");
+        System.out.println("ANO/NE");
+        String ano = scanner.next();
+
+        switch (ano.toLowerCase()) {
+            case "ano":
+                System.out.println("KLICE");
+                System.out.println(invertory.kliceBatoh);
+                System.out.println("VECI");
+                System.out.println(invertory.veciBatoh);
+                return;
+            case "ne":
+                System.out.println("FAJN😢");
+                return;
+            default:
+                System.out.println("NEPOCHOPENY PRIKAZ");
+                return;
+        }
+
+
+    }
+
+
+    public void invertorying() {
+        if (!move.getCurrentRoom().getListOfEnemies().isEmpty() && !move.getCurrentRoom().getKeysList().isEmpty()) {
+            workingWithInventory();
+        } else {
+            System.out.println("NEMUZES PRACOVAT S PREDMETAMA ");
+
+        }
+    }
+
     public void workingWithInventory() {
 
         int vyber;
         int vyber2;
-        for(int i=0;i<move.getCurrentRoom().getItemsList().size();i++) {
+        for (int i = 0; i < move.getCurrentRoom().getItemsList().size(); i++) {
             if (invertory.veciBatoh.size() >= 4) {
                 //veci se prohodi v invenory
                 System.out.println("   ");
@@ -68,12 +103,14 @@ public class PickUp extends Command {
             }
         }
         //ohlidani aby zadny klic nebyl vynecahn
+
         System.out.println("VEM SI VSECHNY KLICE DO INVENTARE");
-        for(int i=0;i<move.getCurrentRoom().getKeysList().size();i++) {
+        for (int i = 0; i < move.getCurrentRoom().getKeysList().size(); i++) {
             workingWithKeys();
         }
     }
-//pridani klice
+
+    //pridani klice
     public void workingWithKeys() {
         System.out.println(move.getCurrentRoom().getKeysList());
         System.out.println("Vem si do inventare klice");

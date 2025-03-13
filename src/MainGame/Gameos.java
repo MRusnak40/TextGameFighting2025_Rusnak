@@ -5,9 +5,13 @@ import AtributesOfPlayer.PickUp;
 import AtributesOfPlayer.SetCharacter;
 import NPCs.Enemy;
 import Rooms.Room;
+
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.function.BiPredicate;
+
 import Character.*;
+
 public class Gameos {
     protected String direction;
     private String filepath = "Rooms.txt";
@@ -16,10 +20,11 @@ public class Gameos {
     Scanner scanner = new Scanner(System.in);
     Postava postava;
     SetCharacter lobby = new SetCharacter(postava);
-    Enemy enemy;
-    Choosing choose = new Choosing(move ,postava);
 
+    Choosing choose = new Choosing(move, postava);
 
+    private Boolean exit = false;
+//loads gamne
 
     public void loadGame() {
         choose.inicializace();
@@ -39,16 +44,18 @@ public class Gameos {
 
     }
 
+    //sets name and cahracter
     public void setCharacter() {
 
-        postava=lobby.setNameOfCharacter();
+        postava = lobby.setNameOfCharacter();
     }
 
-
+    //main loop
     public void gameLoop() {
+        //loaded game
         loadGame();
         System.out.println("Game starts in");
-        int count=10;
+        int count = 10;
         for (int i = 0; i < 10; i++) {
             System.out.println("   ");
             System.out.println("GOOD LUCK");
@@ -56,15 +63,25 @@ public class Gameos {
             System.out.println(count--);
 
         }
+
         System.out.println("Hra byla spravne nactena ze souboru");
         System.out.println("------------------------");
 
         System.out.println("GAME HAS STARTED");
         System.out.println("HAVE A FUN");
         System.out.println("*******************************");
+        //game starst here
+
+
         setCharacter();
 
-        choose.start();
+
+        System.out.println("napis: help  aby jsi vedel prikazy");
+        do {
+
+            choose.doCommand();
+            exit = choose.exit;
+        } while (!exit);
     }
 
 
