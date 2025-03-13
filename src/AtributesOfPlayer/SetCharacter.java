@@ -40,7 +40,7 @@ public class SetCharacter {
         System.out.println(postava);
 
         sc.nextLine();
-return postava;
+        return postava;
     }
 
     public SetCharacter(Postava postava) {

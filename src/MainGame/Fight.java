@@ -16,7 +16,7 @@ public class Fight extends Command {
     ArrayList<Enemy> deadEnemies = new ArrayList<>();
     Random random = new Random();
 
-    public Fight(Postava postava,  Move move) {
+    public Fight(Postava postava, Move move) {
         this.postava = postava;
 
         this.move = move;
@@ -35,8 +35,13 @@ public class Fight extends Command {
 
 
     public void fighting() {
-        fighting();
-
+        if (!move.getCurrentRoom().getListOfEnemies().isEmpty()) {
+            fighting();
+        } else {
+            System.out.println("*--------*");
+            System.out.println("THERE IS NO ENEMIES ");
+            System.out.println("*--------*");
+        }
     }
 
     //sets who will start as first

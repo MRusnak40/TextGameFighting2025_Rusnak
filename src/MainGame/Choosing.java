@@ -18,7 +18,7 @@ Move move;
 //pridavam do has mapy
 public void inicializace(){
 mapa.put("talk",new TalkToNPC(move));
-mapa.put("walk",new Move());
+mapa.put("walk", move);
 mapa.put("pickup",new PickUp(move));
 mapa.put("help",new Help());
 mapa.put("exit",new Exit());

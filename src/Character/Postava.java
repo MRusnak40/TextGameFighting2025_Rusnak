@@ -62,9 +62,7 @@ public abstract class Postava {
         //set Rasa
         boolean isvybrano = false;
         int vyber = 0;
-        System.out.println("    ");
-        System.out.println("    ");
-        System.out.println("    ");
+
         Textik.textForRasa();
         Object object = null;
 
@@ -187,17 +185,18 @@ public abstract class Postava {
 
     @Override
     public String toString() {
-        return "Postava{" +
-                "currentHealth=" + currentHealth +
-                ", maxHealth=" + maxHealth +
-                ", rasa=" + rasa +
-                ", level=" + level +
-                ", odolnost=" + odolnost +
-                ", obratnost=" + obratnost +
-                ", inteligence=" + inteligence +
-                ", sila=" + sila +
-                ", jmeno='" + jmeno + '\'' +
-                '}';
+        return String.format(
+                "Postava:%n" +
+                        "  Jméno: %s%n" +
+                        "  Úroveň: %d%n" +
+                        "  Rasa: %s%n" +
+                        "  Zdraví: %.0f / %.0f%n" +
+                        "  Síla: %.1f%n" +
+                        "  Inteligence: %.1f%n" +
+                        "  Obratnost: %.1f%n" +
+                        "  Odolnost: %.1f",
+                jmeno, level, rasa != null ? rasa.toString() : "Neurčeno", currentHealth, maxHealth, sila, inteligence, obratnost, odolnost
+        );
     }
 
     public double getMaxHealth() {

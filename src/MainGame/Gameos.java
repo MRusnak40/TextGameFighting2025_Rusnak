@@ -47,14 +47,21 @@ public class Gameos {
 
     public void gameLoop() {
         loadGame();
-
-        for (int i = 0; i < 5; i++) {
+        System.out.println("Game starts in");
+        int count=10;
+        for (int i = 0; i < 10; i++) {
             System.out.println("   ");
+            System.out.println("GOOD LUCK");
+            System.out.println("   ");
+            System.out.println(count--);
+
         }
         System.out.println("Hra byla spravne nactena ze souboru");
         System.out.println("------------------------");
 
         System.out.println("GAME HAS STARTED");
+        System.out.println("HAVE A FUN");
+        System.out.println("*******************************");
         setCharacter();
 
         choose.start();
