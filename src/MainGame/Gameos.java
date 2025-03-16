@@ -18,16 +18,17 @@ public class Gameos {
     ArrayList<Room> roomes = new ArrayList<>();
     Move move = new Move();
     Scanner scanner = new Scanner(System.in);
+
     Postava postava;
     SetCharacter lobby = new SetCharacter(postava);
+    Choosing choose;
 
-    Choosing choose = new Choosing(move, postava);
 
     private Boolean exit = false;
 //loads gamne
 
     public void loadGame() {
-        choose.inicializace();
+
         GameLoadingData g = new GameLoadingData();
         roomes = g.loadRoomsFromFile(filepath);
         move.rooms = roomes;
@@ -46,22 +47,23 @@ public class Gameos {
 
     //sets name and cahracter
     public void setCharacter() {
-
-        postava = lobby.setNameOfCharacter();
+postava = lobby.setNameOfCharacter();
+      choose  = new Choosing(move, postava);
     }
 
     //main loop
     public void gameLoop() {
         //loaded game
         loadGame();
+
         System.out.println("Game starts in");
         int count = 10;
         for (int i = 0; i < 10; i++) {
             System.out.println("   ");
-            System.out.println("GOOD LUCK");
+
             System.out.println("   ");
             System.out.println(count--);
-
+            System.out.println("GOOD LUCK");
         }
 
         System.out.println("Hra byla spravne nactena ze souboru");
@@ -74,10 +76,16 @@ public class Gameos {
 
 
         setCharacter();
-
-
+        choose.inicializace();
+        System.out.println("-+-+-+-+-+-+-+-+-");
         System.out.println("napis: help  aby jsi vedel prikazy");
+        System.out.println("-+-+-+-+-+-+-+-+-");
+        System.out.println("  ");
+        System.out.println("Pocet dulezitich npc v msitnsoti:"+move.informationAboutTalking());
+        System.out.println("Aktualni msitnsot:"+move.getCurrentRoom());
+        System.out.println("----------------");
         do {
+
 
             choose.doCommand();
             exit = choose.exit;

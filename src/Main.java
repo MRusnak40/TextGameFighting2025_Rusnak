@@ -22,7 +22,12 @@ chyby a tipy
 - inventar pocita pouze ze spravnyma vstupama
 -Chyba v praci s tridama
 -kdyz odeberu item zustanou mi tam  ty schopnosti potrebuju je odebirat s predmetem
-
+**legenda**
+- -------------- vypis
+- ============ npc mluvi
+- ✾✾═════✦✧✦✧✦═════✾✾  fight
+- ❖═══≪✦✧✦✧✦✧≫═══❖ items
+- oddeleni +++++++++++++++++
  */
         }
     }

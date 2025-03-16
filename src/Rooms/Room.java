@@ -202,7 +202,7 @@ public  class    Room {
     public void setKeysList(ArrayList<Keys> keysList) {
         this.keysList = keysList;
     }
-
+/*
     @Override
     public String toString() {
         return "Room{" +
@@ -227,4 +227,24 @@ public  class    Room {
                 ", keysList=" + keysList +
                 '}';
     }
+
+ */
+@Override
+public String toString() {
+    return String.format(
+            "Room {\n" +
+                    "  Name: %s\n" +
+                    "  Coordinates: (%d, %d)\n" +
+                    "  Directions: Left=%b, Right=%b, Up=%b, Down=%b\n" +
+                    "  Description: %s\n" +
+                    "  Unlocked: %b, Visible: %b, Visited: %b\n" +
+                    "  Enemies: %d, NPCs: %d, Items: %d, Keys: %d\n" +
+                    "}",
+            nameOfRoom, x, y,
+            isPosibleGoLeft, isPosibleGoRight, isPosibleGoUp, isPosibleGoDown,
+            description, isUnlocekd, isVisible, wasThere,
+            nuberOfEnemies, numberOfNPCs, numberOfItems, numberOfKeys
+
+    );
+}
 }

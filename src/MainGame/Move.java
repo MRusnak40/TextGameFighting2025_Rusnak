@@ -1,6 +1,7 @@
 package MainGame;
 
 import AtributesOfPlayer.TalkToNPC;
+import NPCs.NPC;
 import Rooms.Room;
 
 import java.util.ArrayList;
@@ -66,12 +67,15 @@ public class Move extends Command {
 
         System.out.println(" ");
         System.out.println("AKTUALNI MISTNOST:");
-        System.out.println(currentRoom.getNameOfRoom() + " Popis: " + currentRoom.getDescription() + " X: " + currentRoom.getX() + " Y:" + currentRoom.getY());
+        System.out.println(getCurrentRoom());
         //sem priadat npc talk
+        System.out.println("----------------→♫♫♫♫");
+        System.out.println("Pocet dulezitych npc v mistnsoti:"+informationAboutTalking());
+        System.out.println("-----------");
 
-        System.out.println("Kam chces jit: ");
+        System.out.println("Kam chces jit ↓,↑,→,←,: ");
         setDirection(scanner.nextLine());
-        System.out.println(currentRoom.getNameOfRoom() + " Popis: " + currentRoom.getDescription() + " X: " + currentRoom.getX() + " Y:" + currentRoom.getY());
+        System.out.println(getCurrentRoom());
 
 
     }
@@ -128,18 +132,25 @@ public class Move extends Command {
 
                     if (room.isUnlocekd()) {
                         index--;
-                        System.out.println("-------------------------");
+                        System.out.println("♠♠♠----------♠♠♠");
                         System.out.println("PROSEL JSI DO DALSI MISTNOSTI");
-                        System.out.println("-------------------------");
+                        System.out.println("♠♠♠----------♠♠♠");
 
                         currentRoom = rooms.get(index);
                         curretX = room.getX();
                         curretY = room.getY();
                         //potrebne sem pridat mluveni s npc
+
+                        System.out.println("-----------------");
+                        System.out.println("Pocet dulezitych npc v mistnsoti:"+informationAboutTalking());
+                        System.out.println("-----------");
+
+
+
                         return true;
 
                     } else {
-                        System.out.println("-------------------------");
+                        System.out.println("↓↓↓↓↓↓↓↓↓↓↓");
                         System.out.println("Room je zamcena");
                         System.out.println("-------------------------");
                         return false;
@@ -147,7 +158,7 @@ public class Move extends Command {
 
 
                 } else {
-                    System.out.println("-------------------------");
+                    System.out.println("↓↓↓↓↓↓↓↓↓↓↓");
                     System.out.println("Mistnost neexistuje nebo je neviditelna na souradnicich " + curretX + "," + curretY);
                     System.out.println("-------------------------");
                     return false;
@@ -161,6 +172,23 @@ public class Move extends Command {
 
         return false;
     }
+
+//pocet dulzitych npcs
+    public int informationAboutTalking(){
+        int counting = 0;
+
+
+     for(NPC npc: currentRoom.getListOfNPCs()) {
+
+                     if(npc.isImportant()){
+                         counting++;
+                     }
+
+     }
+      return counting;
+    }
+
+
 
     public boolean isMoved() {
         return isMoved;

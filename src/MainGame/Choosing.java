@@ -36,6 +36,7 @@ mapa.put("rules",new Rules());
     //zadavam coomand co budu delat
     //klic zadavam
 public void doCommand(){
+
     System.out.print("ZADEJ AKCI-->>");
     String prikaz = scanner.nextLine();
     prikaz = prikaz.trim();

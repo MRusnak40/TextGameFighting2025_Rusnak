@@ -35,8 +35,9 @@ public class Fight extends Command {
 
 
     public void fighting() {
+        //pokud  list Enemies neni empty
         if (!move.getCurrentRoom().getListOfEnemies().isEmpty()) {
-            fighting();
+            Hits();
         } else {
             System.out.println("*--------*");
             System.out.println("THERE IS NO ENEMIES ");
@@ -47,48 +48,55 @@ public class Fight extends Command {
     //sets who will start as first
     public void Hits() {
         System.out.println("FIGHT - >>>");
+        //urcuje kdo zacne bojovat prvni
         int guess = random.nextInt(2) + 1;
         int whoDied = 0;
 
         switch (guess) {
-
+//fight zacina hrac
             case 1:
+
                 System.out.println("Zahledl jsi ho jako prvni a mel jsi naskok");
+
+
                 for (Enemy e : move.getCurrentRoom().getListOfEnemies()) {
+
                     double enemieHealth = e.getHp();
                     isDead = false;
 
                     while (isDead == false) {
 //enemie got damage
-                        System.out.println("---------");
-                        double luck = random.nextDouble(10);
+                        System.out.println("✾✾═════✦✧✦✧✦═════✾✾");
+
+                        double luck = random.nextInt(10);
                         System.out.println(" Udelil jsi utok: " + e.getUtok() + " a bonusovy utok: " + luck);
 
-
+//pokud je ubranen cely utok
                         if ((e.getObrana() - e.getUtok() - luck) <= 0) {
                             e.setHp(e.getHp() + e.getObrana() - postava.getUtok() - luck);
                         } else {
-                            System.out.println("  *******  ");
+                            System.out.println(" ✾✾═════✦✧✦✧✦═════✾✾  ");
                             System.out.println(e.getJmeno() + " UBRANIL  CELY UTOK *--*-*---");
                         }
 
-                        System.out.println("---------");
+                        System.out.println("✾✾═════✦✧✦✧✦═════✾✾");
 
                         whoDied = howDeadAreU(e);
 
 //postava got damage
-                        luck = random.nextDouble(10);
-                        System.out.println("---------");
-                        System.out.println("Udelil ti utok: " + e.getUtok() + " a bonusovy utok: " + luck);
+                        luck = random.nextInt(10);
+                        System.out.println("✾✾═════✦✧✦✧✦═════✾✾");
+                        System.out.println("Dostal jsi damage: " + e.getUtok() + " a smula: " + luck);
+//pokud je ubranen cely utok
 
                         if ((postava.getObrana(postava) - e.getUtok() - luck) <= 0) {
                             postava.setCurrentHealth(postava.getCurrentHealth() + postava.getObrana(postava) - e.getUtok() - luck);
                         } else {
-                            System.out.println("  *******  ");
+                            System.out.println("✾✾═════✦✧✦✧✦═════✾✾");
                             System.out.println("UBRANIL JSI CELY UTOK *--*-*---");
                         }
 
-                        System.out.println("---------");
+                        System.out.println("✾✾═════✦✧✦✧✦═════✾✾");
                         whoDied = howDeadAreU(e);
 
                     }
@@ -120,33 +128,33 @@ public class Fight extends Command {
 
 
 //postava got damage
-                        double luck = random.nextDouble(10);
-                        System.out.println("---------");
-                        System.out.println("Udelil ti utok: " + e.getUtok() + " a bonusovy utok: " + luck);
+                        double luck = random.nextInt(10);
+                        System.out.println("✾✾═════✦✧✦✧✦═════✾✾");
+                        System.out.println("Dostal jsi damage: " + e.getUtok() + " a smula : " + luck);
 
                         if ((postava.getObrana(postava) - e.getUtok() - luck) <= 0) {
                             postava.setCurrentHealth(postava.getCurrentHealth() + postava.getObrana(postava) - e.getUtok() - luck);
                         } else {
-                            System.out.println("  *******  ");
+                            System.out.println("✾✾═════✦✧✦✧✦═════✾✾");
                             System.out.println("UBRANIL JSI CELY UTOK *--*-*---");
                         }
 
-                        System.out.println("---------");
+                        System.out.println("✾✾═════✦✧✦✧✦═════✾✾");
                         whoDied = howDeadAreU(e);
 //enemie got damage
-                        System.out.println("---------");
-                        luck = random.nextDouble(10);
+                        System.out.println("✾✾═════✦✧✦✧✦═════✾✾");
+                        luck = random.nextInt(10);
                         System.out.println(" Udelil jsi utok: " + e.getUtok() + " a bonusovy utok: " + luck);
 
 
                         if ((e.getObrana() - e.getUtok() - luck) <= 0) {
                             e.setHp(e.getHp() + e.getObrana() - postava.getUtok() - luck);
                         } else {
-                            System.out.println("  *******  ");
+                            System.out.println("✾✾═════✦✧✦✧✦═════✾✾");
                             System.out.println(e.getJmeno() + " UBRANIL  CELY UTOK *--*-*---");
                         }
 
-                        System.out.println("---------");
+                        System.out.println("✾✾═════✦✧✦✧✦═════✾✾");
 
                         whoDied = howDeadAreU(e);
                     }
@@ -173,7 +181,8 @@ public class Fight extends Command {
 
     //checking who will die first
     public int howDeadAreU(Enemy e) {
-        if (postava.getCurrentHealth() <= 0) {
+        //vic hp nez 0
+        if (0 >= postava.getCurrentHealth()) {
 
             move.setCurrentRoom(move.rooms.getFirst());
             postava.setCurrentHealth(postava.getMaxHealth());
@@ -187,7 +196,9 @@ public class Fight extends Command {
             System.out.println("**********************  ");
             isDead = true;
             return 0;
-        } else if (e.getHp() <= 0) {
+
+
+        } else if (e.getHp() <= 0 && postava.getCurrentHealth() >= 0) {
 
 
             System.out.println("  ");
@@ -199,9 +210,14 @@ public class Fight extends Command {
             postava.setLevel(postava.getLevel() + 1);
             isDead = true;
             return 1;
+
+        } else {
+
+            isDead = false;
+            return 2;
+
+
         }
-        isDead = false;
-        return 2;
     }
 
 }

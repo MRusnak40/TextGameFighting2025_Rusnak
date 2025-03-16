@@ -3,8 +3,8 @@ package NPCs;
 import java.io.Serializable;
 import java.util.Random;
 
-public abstract class Enemy  {
-    Random random=new Random();
+public abstract class Enemy {
+    Random random = new Random();
     protected EnemyEnum type;
     protected String jmeno;
     protected double sila;
@@ -12,9 +12,9 @@ public abstract class Enemy  {
     protected double obratnost;
     protected double odolnost;
     protected int level;
-protected double hp;
+    protected double hp;
 
-    public Enemy( EnemyEnum type, String jmeno, double sila, double inteligence, double obratnost, double odolnost, int level, double hp) {
+    public Enemy(EnemyEnum type, String jmeno, double sila, double inteligence, double obratnost, double odolnost, int level, double hp) {
         this.type = type;
         this.jmeno = jmeno;
         this.sila = sila;
@@ -25,15 +25,20 @@ protected double hp;
         this.hp = hp;
     }
 
-    public  double getUtok(){
+    public double getUtok() {
 
-        return sila+inteligence+obratnost+level;
-    };
-    public  double getObrana(){
+        return sila + inteligence + obratnost + level;
+    }
 
-        return inteligence+obratnost+odolnost+level;
+    ;
 
-    };
+    public double getObrana() {
+
+        return inteligence + obratnost + odolnost + level;
+
+    }
+
+    ;
 /*
     public abstract double setInteligence();
     public abstract double setObratnost();
