@@ -102,6 +102,7 @@ public class PickUp extends Command {
                 invertory.addToInvenoty(vyber);
             }
         }
+
         //ohlidani aby zadny klic nebyl vynecahn
 
         System.out.println("VEM SI VSECHNY KLICE DO INVENTARE");

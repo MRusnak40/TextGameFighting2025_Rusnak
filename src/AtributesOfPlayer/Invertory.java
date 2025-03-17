@@ -15,7 +15,10 @@ public class Invertory {
     ArrayList<Keys> kliceBatoh = new ArrayList<>();
     Move move;
 
+
+    // pridani veci
     public void addToInvenoty(int vecDoInventare) {
+
         System.out.println("   ");
         System.out.println(" Vec byla pridana");
         System.out.println("VEC:\n" + move.getCurrentRoom().getItemsList().get(vecDoInventare));
@@ -27,6 +30,7 @@ public class Invertory {
     public void setBonusesForItems() {
         for (Items item : veciBatoh) {
 
+            //pridani hodnot z itemu
             postava.setCurrentHealth(postava.getCurrentHealth() + item.getBonusHp());
             postava.setMaxHealth(postava.getCurrentHealth() + item.getBonusHp());
             postava.setInteligence(postava.getInteligence() + item.getBonusInteligence());
@@ -34,21 +38,44 @@ public class Invertory {
             postava.setObratnost(postava.getObratnost() + item.getBonusObratnst());
             postava.setSila(postava.getSila() + item.getBonusSila());
 
+
         }
+        //pocitani bonusu
+        postava.getRasa().bonusInteligence();
+        postava.getRasa().bonusObratnost();
+        postava.getRasa().bonusSila();
+        postava.getRasa().bonusOdolnost();
 
     }
 
-    public void disableBonusesForItems() {
+    public void disableBonusesForItems(int num) {
+        //pridani hodnot z itemu
+        postava.setCurrentHealth(postava.getCurrentHealth() - veciBatoh.get(num).getBonusHp());
+        postava.setMaxHealth(postava.getCurrentHealth() - veciBatoh.get(num).getBonusHp());
+        postava.setInteligence(postava.getInteligence() - veciBatoh.get(num).getBonusInteligence());
+        postava.setOdolnost(postava.getOdolnost() - veciBatoh.get(num).getBonusOdolnost());
+        postava.setObratnost(postava.getObratnost() - veciBatoh.get(num).getBonusObratnst());
+        postava.setSila(postava.getSila() - veciBatoh.get(num).getBonusSila());
+
+
+        //pocitani bonusu
+        postava.getRasa().bonusInteligence();
+        postava.getRasa().bonusObratnost();
+        postava.getRasa().bonusSila();
+        postava.getRasa().bonusOdolnost();
 
 
     }
 
+    //vymenei veci pokud mam plny inventar
+    //numberOfItemOnInvenotry - co odeberu z inventory
+    //itemOfRoom - co si vezmes do  inventaere
 
     public void replaceItem(int numberOfItemOnInventory, int itemOfRoom) {
         System.out.println("Vec byla odstranena " + veciBatoh.get(numberOfItemOnInventory));
+
         //pridani codu pro to aby to odecetlo hodnoty odebranych predmetu
-
-
+        disableBonusesForItems(numberOfItemOnInventory);
 
         veciBatoh.remove(numberOfItemOnInventory);
         System.out.println("             ");
@@ -58,6 +85,7 @@ public class Invertory {
         setBonusesForItems();
     }
 
+    //odstraneni
     public void leaveItems() {
 
 
@@ -65,7 +93,7 @@ public class Invertory {
 
     public void pickUpKeys(int vyber) {
         System.out.println("*****************");
-        if (vyber <= move.getCurrentRoom().getKeysList().size()) {
+        if (vyber <= move.getCurrentRoom().getKeysList().size() && vyber >=0) {
 
             kliceBatoh.add(move.getCurrentRoom().getKeysList().remove(vyber));
             System.out.println("Klic byl PRIDAN");
