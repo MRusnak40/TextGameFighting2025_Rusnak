@@ -98,21 +98,21 @@ public abstract class Postava {
                 System.out.println("-----------------");
 
 
-                return new Bojovnik(jmeno, 10, 1, 1, 6, (IRasa) object);
+                return new Bojovnik(jmeno, 20,7 , 6, 25, (IRasa) object);
 
             case 2:
                 System.out.println("-----------------");
                 System.out.println("CHoosed Specialization: Mage");
                 System.out.println("-----------------");
 
-                return new Carodej(jmeno, 5, 10, 3, 1, (IRasa) object);
+                return new Carodej(jmeno, 25, 10, 10, 1, (IRasa) object);
 
             case 3:
                 System.out.println("-----------------");
                 System.out.println("CHoosed Specialization: Scout");
                 System.out.println("-----------------");
 
-                return new Pruzkumnik(jmeno, 3, 7, 10, 0, (IRasa) object);
+                return new Pruzkumnik(jmeno, 10, 20, 10, 0, (IRasa) object);
 
             default:
                 return null;

@@ -9,12 +9,194 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Fight extends Command {
+
+
+
+
+
+
+
+
+
+        private Postava postava;
+        private Move move;
+        private Random random = new Random();
+        private ArrayList<Enemy> deadEnemies = new ArrayList<>();
+
+        public Fight(Postava postava, Move move) {
+            this.postava = postava;
+            this.move = move;
+
+
+        }
+
+    @Override
+    public String execute() {
+        return "";
+    }
+
+    @Override
+    public boolean exit() {
+        return false;
+    }
+
+
+
+        public void playerAttack(){
+
+        }
+
+
+        public void enemyAttack(){}
+
+    public void fight(){}
+
+
+    public void handleDeaths(){}
+
+
+    public void  enemyDeaths(){}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+        @Override
+        public String execute() {
+            fighting();
+            return "";
+        }
+
+        @Override
+        public boolean exit() {
+            return false;
+        }
+
+        public void fighting() {
+            if (move.getCurrentRoom().getListOfEnemies() == null || move.getCurrentRoom().getListOfEnemies().isEmpty()) {
+                System.out.println("*--------*");
+                System.out.println("THERE ARE NO ENEMIES");
+                System.out.println("*--------*");
+                return;
+            }
+            Hits();
+        }
+
+        public void Hits() {
+            System.out.println("FIGHT - >>>");
+            int guess = random.nextInt(2) + 1;
+
+            switch (guess) {
+                case 1:
+                    System.out.println("Zahledl jsi ho jako prvni a mel jsi naskok");
+                    playerStarts();
+                    break;
+                case 2:
+                    System.out.println("Nepritel na tebe zautocil z temnot");
+                    enemyStarts();
+                    break;
+            }
+        }
+
+        private void playerStarts() {
+            for (Enemy e : move.getCurrentRoom().getListOfEnemies()) {
+                if (e == null) continue; // Ochrana proti null
+                battleWithEnemy(e);
+            }
+        }
+
+        private void enemyStarts() {
+            for (Enemy e : move.getCurrentRoom().getListOfEnemies()) {
+                if (e == null) continue; // Ochrana proti null
+                enemyAttack(e);
+                battleWithEnemy(e);
+            }
+        }
+
+        private void battleWithEnemy(Enemy e) {
+            while (postava.getCurrentHealth() > 0 && e.getHp() > 0) {
+                playerAttack(e);
+                if (e.getHp() > 0) {
+                    enemyAttack(e);
+                }
+            }
+            if (postava.getCurrentHealth() <= 0) {
+                System.out.println("Umřel jsi! Obnovuji životy posledního nepřítele.");
+                e.setHp(e.getMaxHp()); // Obnovit životy posledního nepřítele
+                postava.setCurrentHealth(postava.getMaxHealth()); // Obnovit zdraví hráče
+                postava.setLevel(1); // Reset levelu
+            } else if (e.getHp() <= 0) {
+                handleEnemyDeath(e);
+            }
+        }
+
+        private void playerAttack(Enemy e) {
+            double luck = random.nextInt(10);
+            System.out.println("✾✾═════✦✧✦✧✦═════✾✾");
+            System.out.println("Udělal jsi útok: " + postava.getUtok() + " a bonusový útok: " + luck);
+            double damage = postava.getUtok() + luck - e.getObrana();
+            e.setHp(Math.max(0, e.getHp() - damage));
+            System.out.println(e.getJmeno() + " má " + e.getHp() + " HP.");
+        }
+
+        private void enemyAttack(Enemy e) {
+            double luck = random.nextInt(10);
+            System.out.println("✾✾═════✦✧✦✧✦═════✾✾");
+            System.out.println("Dostal jsi damage: " + e.getUtok() + " a smula: " + luck);
+            double damage = e.getUtok() + luck - postava.getObrana(postava);
+            postava.setCurrentHealth(Math.max(0, postava.getCurrentHealth() - damage));
+            System.out.println("Máš " + postava.getCurrentHealth() + " HP.");
+        }
+
+        private void handleEnemyDeath(Enemy e) {
+            System.out.println("Zabil jsi nepřítele: " + e.getJmeno());
+            postava.setCurrentHealth(postava.getCurrentHealth() + 40);
+            System.out.println("Získal jsi 40 HP! Aktuální zdraví: " + postava.getCurrentHealth());
+            move.getCurrentRoom().getListOfEnemies().remove(e); // Odebrat nepřítele ze seznamu
+            deadEnemies.add(e); // Přidat nepřítele do seznamu mrtvých
+        }
+
+
+
+
+
+
+
+
+
+
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
     Postava postava;
     Enemy enemy;
     Move move;
     private boolean isDead;
     ArrayList<Enemy> deadEnemies = new ArrayList<>();
     Random random = new Random();
+
+
+
 
     public Fight(Postava postava, Move move) {
         this.postava = postava;
@@ -82,7 +264,7 @@ public class Fight extends Command {
                         System.out.println("✾✾═════✦✧✦✧✦═════✾✾");
 
                         whoDied = howDeadAreU(e);
-
+                        controllingDeath(whoDied, e, enemieHealth);
 //postava got damage
                         luck = random.nextInt(10);
                         System.out.println("✾✾═════✦✧✦✧✦═════✾✾");
@@ -98,21 +280,12 @@ public class Fight extends Command {
 
                         System.out.println("✾✾═════✦✧✦✧✦═════✾✾");
                         whoDied = howDeadAreU(e);
-
+                        controllingDeath(whoDied, e, enemieHealth);
                     }
 
-                    switch (whoDied) {
-                        case 0:
-                            e.setHp(enemieHealth);
-                            return;
-
-                        case 1:
-                            deadEnemies.add(move.getCurrentRoom().getListOfEnemies().remove(0));
-                        case 2:
-                            break;
+                    if (move.getCurrentRoom().getListOfEnemies().isEmpty()) {
+                        return;
                     }
-
-
                 }
 
 
@@ -141,6 +314,7 @@ public class Fight extends Command {
 
                         System.out.println("✾✾═════✦✧✦✧✦═════✾✾");
                         whoDied = howDeadAreU(e);
+                        controllingDeath(whoDied, e, enemieHealth);
 //enemie got damage
                         System.out.println("✾✾═════✦✧✦✧✦═════✾✾");
                         luck = random.nextInt(10);
@@ -157,25 +331,34 @@ public class Fight extends Command {
                         System.out.println("✾✾═════✦✧✦✧✦═════✾✾");
 
                         whoDied = howDeadAreU(e);
+                        controllingDeath(whoDied, e, enemieHealth);
+
                     }
 
-                    switch (whoDied) {
-                        case 0:
-                            e.setHp(enemieHealth);
-                            return;
-
-                        case 1:
-                            deadEnemies.add(move.getCurrentRoom().getListOfEnemies().remove(0));
-                        case 2:
-                            break;
+                    if (move.getCurrentRoom().getListOfEnemies().isEmpty()) {
+                        return;
                     }
-
-
                 }
 
 
         }
 
+
+    }
+
+    public void controllingDeath(int number, Enemy e, double live) {
+        switch (number) {
+            case 0:
+                e.setHp(live);
+                return;
+
+            case 1:
+                if (!move.getCurrentRoom().getListOfEnemies().isEmpty())
+                    deadEnemies.add(move.getCurrentRoom().getListOfEnemies().removeFirst());
+                return;
+            case 2:
+                break;
+        }
 
     }
 
@@ -204,7 +387,7 @@ public class Fight extends Command {
             System.out.println("  ");
             System.out.println("You killed Enemie: " + e.getJmeno());
             postava.setCurrentHealth(postava.getCurrentHealth() + 40);
-            System.out.println("Byly ti pridany zivoty (+40):" + postava.getCurrentHealth());
+            System.out.println("Byly ti pridany zivoty (+40)--->>>>" + postava.getCurrentHealth());
             System.out.println("  ");
 
             postava.setLevel(postava.getLevel() + 1);
@@ -219,5 +402,9 @@ public class Fight extends Command {
 
         }
     }
+
+     */
+
+
 
 }

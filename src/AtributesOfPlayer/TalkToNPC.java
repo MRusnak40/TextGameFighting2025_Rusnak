@@ -16,7 +16,6 @@ public class TalkToNPC extends Command {
 
     @Override
     public String execute() {
-        inevitableTalking();
         chooseToTalk();
         return "";
     }
@@ -29,7 +28,7 @@ public class TalkToNPC extends Command {
         this.move = move;
 
     }
-
+/*
     private void chooseToTalk() {
         int importantTalks = move.informationAboutTalking();
         int totalNPCs = move.getCurrentRoom().getNumberOfNPCs();
@@ -37,6 +36,7 @@ public class TalkToNPC extends Command {
         if (totalNPCs > importantTalks) {
             System.out.println("--------***---------");
             System.out.println("Chces si jentak pokecat? 1/0  \n1=ano \n0=ne");
+
             if (scanner.nextInt() == 1) {
                 System.out.println("SUPER✨✨✨");
                 talking();
@@ -44,7 +44,12 @@ public class TalkToNPC extends Command {
                 System.out.println("--------***----***------");
                 System.out.println("Oni s tebou taky ne👌");
             }
+            scanner.nextLine();
+        }else {
+            System.out.println("Nelze");
         }
+
+
     }
 
     private void talking() {
@@ -57,6 +62,7 @@ public class TalkToNPC extends Command {
 
         for (NPC npc : npcs) {
             if (npc.isImportant() || npc.isSpoken()) continue;
+
             System.out.println("   ");
             System.out.println("/=================/");
             System.out.println("NPC " + npc.getName());
@@ -82,6 +88,8 @@ public class TalkToNPC extends Command {
                 System.out.println(npc.getDialog());
                 npc.setSpoken(true);
                 System.out.println("   ");
+            }else if(npc.isImportant() && npc.isSpoken()){
+
             }
         }
     }
@@ -99,9 +107,12 @@ public class TalkToNPC extends Command {
 
 
 
-/*
+
+ */
+
     //vyber toho jestli bude mluvit i s nedulezitima
     public void chooseToTalk() {
+        System.out.println("**--------------**");
         System.out.println("DULEZITY DIALOG");
         System.out.println("**--------------**");
         inevitableTalking();
@@ -145,28 +156,15 @@ public class TalkToNPC extends Command {
                     npCs.setSpoken(true);
 
                 } else {
-                    int rad = rd.nextInt(5);
+
                     if (!npCs.isImportant()) {
 
                         System.out.println("/=================/");
                         System.out.println("NPC " + npCs.getName());
                         System.out.println("*===================*");
 
-                        switch (rad) {
-                            case 0:
-                                System.out.println("Nemam cas ted");
-                            case 1:
-                                System.out.println("Nemam co rict!");
+                        System.out.println(getRandomResponse());
 
-                            case 2:
-                                System.out.println("Nekdy priste ti to povim");
-                            case 3:
-                                System.out.println("Ja to svoje rekl");
-                            case 4:
-                                System.out.println("TAHNI");
-
-                        }
-                        break;
                     }
                 }
             }
@@ -177,18 +175,37 @@ public class TalkToNPC extends Command {
         }
     }
 
+    private String getRandomResponse() {
+        String[] responses = {
+                "Nemam cas ted",
+                "Nemam co rict!",
+                "Nekdy priste ti to povim",
+                "Ja to svoje rekl",
+                "TAHNI",
+                "Opakovat ti to nebudu"
+        };
+        return responses[rd.nextInt(responses.length)];
+    }
+
     //mluveni s dulezityma osobama
     public void inevitableTalking() {
 
         for (NPC npCs : move.getCurrentRoom().getListOfNPCs()) {
+
+            System.out.println("   ");
+            System.out.println("   ");
+            System.out.println("/=================/");
+            System.out.println("Mluvis s: " + npCs.getName());
+            System.out.println("*===================*");
+
+
             if (npCs.isImportant() && !npCs.isSpoken()) {
-                System.out.println("   ");
-                System.out.println("   ");
-                System.out.println("/=================/");
-                System.out.println("Mluvis s: " + npCs.getName());
-                System.out.println("*===================*");
+
                 System.out.println(npCs.getDialog());
                 npCs.setSpoken(true);
+            }else if(npCs.isImportant() && npCs.isSpoken()){
+                System.out.println(getRandomResponse());
+
             }
         }
 
@@ -196,6 +213,6 @@ public class TalkToNPC extends Command {
     }
 
 
- */
+
 
 }

@@ -88,12 +88,18 @@ public class Invertory {
     //odstraneni
     public void leaveItems() {
 
-
+        for (int i = 0; i < move.getCurrentRoom().getItemsList().size(); i++)
+            if(!move.getCurrentRoom().getItemsList().isEmpty()) {
+                move.getCurrentRoom().getItemsList().removeFirst();
+                System.out.println("  ");
+                System.out.println("Predmety zmizeli z mistnosti");
+                System.out.println("  ");
+            }
     }
 
     public void pickUpKeys(int vyber) {
         System.out.println("*****************");
-        if (vyber <= move.getCurrentRoom().getKeysList().size() && vyber >=0) {
+        if (vyber <= move.getCurrentRoom().getKeysList().size() && vyber >= 0) {
 
             kliceBatoh.add(move.getCurrentRoom().getKeysList().remove(vyber));
             System.out.println("Klic byl PRIDAN");

@@ -6,7 +6,7 @@ WANDERER,Johan místní tulák,Hele mam tu pro tebe domácí meducínu jo a chce
 VILLIGER,žena poutníka,běž svýma vtipama strašit jiného kdyť nám tu zachraňuje holej zadek,Se omlouvám za muže,false,false
 VILLIGER,Bohatý sedlák,Moje zlatáky jsou pro mě duležité a proto ti dám něco co nepotřebuju,Díky moc že jsi ty svině zabil,false,false
 VILLIGER,Bába kořenářka,Skvěle našel jsi tuto budovu i přes mlhu ale je tu ještě jedna doufám že ji najdeš,Omlouvám se že ruším poutníku,false,true
-VILLIGER,Jsi mě málem trefil jak se tu oháníš tim mečem,Dal ti zabrat co,HELE!,false,false
+VILLIGER,Tonda standa,Jsi mě málem trefil jak se tu oháníš tim mečem,Dal ti zabrat co,false,false
 GUARD,Ochránce světla,Díky za pomoc dokázal jsi to včem jsem já selhal ale ještě neni konec dojdi zpět na náměstí a vrať kámen,Ahoj,false,true
 GUARD,Železný ochrance,Děkuji že jsi zabil démony,Bratře!,false,false
 WANDERER,Tulák,Je tu mapa Která ti pomuže najít cestu v mlze do další budovy,Ahoj,false,false

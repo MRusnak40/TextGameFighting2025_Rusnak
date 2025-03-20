@@ -28,6 +28,9 @@ chyby a tipy
 - ✾✾═════✦✧✦✧✦═════✾✾  fight
 - ❖═══≪✦✧✦✧✦✧≫═══❖ items
 - oddeleni +++++++++++++++++
+
+
+-Prepsat vlstnosti u bojovnika Textik
  */
         }
     }

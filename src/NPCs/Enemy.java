@@ -116,4 +116,6 @@ public abstract class Enemy {
                 ", level=" + level +
                 '}';
     }
+
+
 }
