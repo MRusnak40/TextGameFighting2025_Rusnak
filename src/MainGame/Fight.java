@@ -75,7 +75,7 @@ public class Fight extends Command {
     }
 public void hits(){
 
-
+EFF
 }
 
     public void handleDeaths(){}
