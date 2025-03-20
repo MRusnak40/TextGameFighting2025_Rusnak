@@ -42,15 +42,41 @@ public class Fight extends Command {
 
 
 
-        public void playerAttack(){
+        public void playerAttack(Enemy e){
+            double luck = random.nextInt(10);
+            System.out.println("✾✾═════✦✧✦✧✦═════✾✾");
+            System.out.println("Udělal jsi útok: " + postava.getUtok() + " a bonusový útok: " + luck);
+            double damage = postava.getUtok() + luck - e.getObrana();
+            e.setHp(Math.max(0, e.getHp() - damage));
+            System.out.println("---------------");
+            System.out.println(e.getJmeno() + " má " + e.getHp() + " HP.");
 
         }
 
 
-        public void enemyAttack(){}
+        public void enemyAttack(Enemy e){
+            double luck = random.nextInt(10);
+            System.out.println("✾✾═════✦✧✦✧✦═════✾✾");
+            System.out.println("Dostal jsi damage: " + e.getUtok() + " a smula: " + luck);
+            double damage = e.getUtok() + luck - postava.getObrana(postava);
+            postava.setCurrentHealth(Math.max(0, postava.getCurrentHealth() - damage));
+            System.out.println("Máš " + postava.getCurrentHealth() + " HP.");
+        }
 
-    public void fight(){}
+    public void fight(){
+            if(!move.getCurrentRoom().getListOfEnemies().isEmpty()){
+                hits();
+            }else {
+                System.out.println("///++++++++++++++++++++++++++///");
+                System.out.println("NEJSOU TU ENEMY");
+                System.out.println("///++++++++++++++++++++++++++///");
 
+            }
+    }
+public void hits(){
+
+
+}
 
     public void handleDeaths(){}
 
