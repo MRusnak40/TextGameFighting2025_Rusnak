@@ -47,8 +47,8 @@ public class Gameos {
 
     //sets name and cahracter
     public void setCharacter() {
-postava = lobby.setNameOfCharacter();
-      choose  = new Choosing(move, postava);
+        postava = lobby.setNameOfCharacter();
+        choose = new Choosing(move, postava);
     }
 
     //main loop
@@ -81,16 +81,52 @@ postava = lobby.setNameOfCharacter();
         System.out.println("napis: help  aby jsi vedel prikazy");
         System.out.println("-+-+-+-+-+-+-+-+-");
         System.out.println("  ");
-        System.out.println("Pocet dulezitich npc v msitnsoti:"+move.informationAboutTalking());
-        System.out.println("Aktualni msitnsot:"+move.getCurrentRoom());
+        System.out.println("Pocet dulezitich npc v msitnsoti:" + move.informationAboutTalking());
+        System.out.println("Aktualni msitnsot:" + move.getCurrentRoom());
         System.out.println("----------------");
         do {
 
+            endOfGame();
 
-            choose.doCommand();
-            exit = choose.exit;
+            if (!exit) {
+                choose.doCommand();
+                exit = choose.exit;
+            }
+
+
+
+
+
         } while (!exit);
     }
 
+    public void endOfGame() {
+        int count = 0;
+        for (Room r : move.getRooms()) {
+            if (r.isWasThere()) {
+                count++;
+            }
+
+
+        }
+        if (count == move.getRooms().size() && move.getCurrentRoom() == move.getRooms().getFirst()) {
+            for (int i = 0; i < 5; i++) {
+                System.out.println("  ");
+                System.out.println("  ");
+                System.out.println("  ");
+            }
+            System.out.println("Super Dohral jsi hru");
+            System.out.println("tvoje cesta je u konce");
+            System.out.println("       ");
+            System.out.println("  💪😎🤌            ");
+            System.out.println("         ");
+            exit = true;
+            Exit exit1 = new Exit();
+            exit1.execute();
+
+
+        }
+
+    }
 
 }

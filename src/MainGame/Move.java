@@ -12,7 +12,7 @@ public class Move extends Command {
     private int curretX = 0;
     private int curretY = 0;
     Scanner scanner = new Scanner(System.in);
-    ArrayList<Room> rooms=new ArrayList<>() ;
+    ArrayList<Room> rooms = new ArrayList<>();
     //private String filepath = "Rooms.txt";
     public boolean isMoved;
 
@@ -70,7 +70,7 @@ public class Move extends Command {
         System.out.println(getCurrentRoom());
         //sem priadat npc talk
         System.out.println("----------------→♫♫♫♫");
-        System.out.println("Pocet dulezitych npc v mistnsoti:"+informationAboutTalking());
+        System.out.println("Pocet dulezitych npc v mistnsoti:" + informationAboutTalking());
         System.out.println("-----------");
 
         System.out.println("Kam chces jit ↓,↑,→,←,: ");
@@ -140,11 +140,10 @@ public class Move extends Command {
                         curretX = room.getX();
                         curretY = room.getY();
                         //potrebne sem pridat mluveni s npc
-
+                        currentRoom.setWasThere(true);
                         System.out.println("-----------------");
-                        System.out.println("Pocet dulezitych npc v mistnsoti:"+informationAboutTalking());
+                        System.out.println("Pocet dulezitych npc v mistnsoti:" + informationAboutTalking());
                         System.out.println("-----------");
-
 
 
                         return true;
@@ -173,21 +172,20 @@ public class Move extends Command {
         return false;
     }
 
-//pocet dulzitych npcs
-    public int informationAboutTalking(){
+    //pocet dulzitych npcs
+    public int informationAboutTalking() {
         int counting = 0;
 
 
-     for(NPC npc: currentRoom.getListOfNPCs()) {
+        for (NPC npc : currentRoom.getListOfNPCs()) {
 
-                     if(npc.isImportant()){
-                         counting++;
-                     }
+            if (npc.isImportant()) {
+                counting++;
+            }
 
-     }
-      return counting;
+        }
+        return counting;
     }
-
 
 
     public boolean isMoved() {

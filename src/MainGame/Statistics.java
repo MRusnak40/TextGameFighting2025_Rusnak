@@ -1,10 +1,13 @@
 package MainGame;
+
 import Character.*;
-public class Statistics extends  Command{
+
+public class Statistics extends Command {
     Postava postava;
+
     @Override
     public String execute() {
-        return postava.toString();
+        return "aktualni stav:" + postava.toString();
     }
 
     @Override

@@ -24,7 +24,7 @@ mapa.put("help",new Help());
 mapa.put("exit",new Exit());
 mapa.put("fight",new Fight(postava,move));
 mapa.put("rules",new Rules());
-mapa.put("Statistics",new Statistics(postava));
+mapa.put("statistics",new Statistics(postava));
 
 }
 

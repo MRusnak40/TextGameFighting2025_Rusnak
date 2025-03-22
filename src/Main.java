@@ -18,10 +18,10 @@ gameos.gameLoop();
 /*
 chyby a tipy
 
--Klice by mohli zustavat v mistnostech a hrac by si je mohl brat az pozdeji
-- inventar pocita pouze ze spravnyma vstupama
--Chyba v praci s tridama
--kdyz odeberu item zustanou mi tam  ty schopnosti potrebuju je odebirat s predmetem
+-Klice by mohli zustavat v mistnostech a hrac by si je mohl brat az pozdeji -
+- inventar pocita pouze ze spravnyma vstupama -
+-Chyba v praci s tridama  +
+-kdyz odeberu item zustanou mi tam  ty schopnosti potrebuju je odebirat s predmetem  +
 **legenda**
 - -------------- vypis
 - ============ npc mluvi
@@ -31,6 +31,11 @@ chyby a tipy
 
 
 -Prepsat vlstnosti u bojovnika Textik
+
+
+- reseni klicu a jejich schopnost odemikat mistnosti
+-udelat konec hry
+-
  */
         }
     }
