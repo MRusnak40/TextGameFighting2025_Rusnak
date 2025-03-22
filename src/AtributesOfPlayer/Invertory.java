@@ -15,6 +15,11 @@ public class Invertory {
     ArrayList<Keys> kliceBatoh = new ArrayList<>();
     Move move;
 
+    public Invertory(Postava postava, Move move) {
+        this.postava = postava;
+
+        this.move = move;
+    }
 
     // pridani veci
     public void addToInvenoty(int vecDoInventare) {

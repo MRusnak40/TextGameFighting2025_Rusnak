@@ -11,28 +11,22 @@ import java.util.Random;
 public class Fight extends Command {
 
 
+    private Postava postava;
+    private Move move;
+    Random random = new Random();
+    private ArrayList<Enemy> deadEnemies = new ArrayList<>();
+
+    public Fight(Postava postava, Move move) {
+        this.postava = postava;
+        this.move = move;
 
 
-
-
-
-
-
-        private Postava postava;
-        private Move move;
-        private Random random = new Random();
-        private ArrayList<Enemy> deadEnemies = new ArrayList<>();
-
-        public Fight(Postava postava, Move move) {
-            this.postava = postava;
-            this.move = move;
-
-
-        }
+    }
 
     @Override
     public String execute() {
-        return "";
+        fight();
+        return "BOJ SKONCIL";
     }
 
     @Override
@@ -41,47 +35,234 @@ public class Fight extends Command {
     }
 
 
-
-        public void playerAttack(Enemy e){
-            double luck = random.nextInt(10);
-            System.out.println("✾✾═════✦✧✦✧✦═════✾✾");
-            System.out.println("Udělal jsi útok: " + postava.getUtok() + " a bonusový útok: " + luck);
-            double damage = postava.getUtok() + luck - e.getObrana();
+    //player  attack
+    public void playerAttack(Enemy e) {
+        double luck = random.nextInt(10);
+        System.out.println("✾✾═════✦✧✦✧✦═════✾✾");
+        System.out.println("Udělal jsi útok: " + postava.getUtok() + " a bonusový útok: " + luck);
+        double damage = postava.getUtok() + luck - e.getObrana();
+        if (damage > 0) {
             e.setHp(Math.max(0, e.getHp() - damage));
+        } else {
             System.out.println("---------------");
-            System.out.println(e.getJmeno() + " má " + e.getHp() + " HP.");
-
+            System.out.println("Enemy se ti ubranil");
+            System.out.println("---------------");
         }
+        System.out.println(e.getJmeno() + " má " + e.getHp() + " HP.");
 
-
-        public void enemyAttack(Enemy e){
-            double luck = random.nextInt(10);
-            System.out.println("✾✾═════✦✧✦✧✦═════✾✾");
-            System.out.println("Dostal jsi damage: " + e.getUtok() + " a smula: " + luck);
-            double damage = e.getUtok() + luck - postava.getObrana(postava);
-            postava.setCurrentHealth(Math.max(0, postava.getCurrentHealth() - damage));
-            System.out.println("Máš " + postava.getCurrentHealth() + " HP.");
-        }
-
-    public void fight(){
-            if(!move.getCurrentRoom().getListOfEnemies().isEmpty()){
-                hits();
-            }else {
-                System.out.println("///++++++++++++++++++++++++++///");
-                System.out.println("NEJSOU TU ENEMY");
-                System.out.println("///++++++++++++++++++++++++++///");
-
-            }
     }
-public void hits(){
 
-EFF
-}
+    //enemy attack
+    public void enemyAttack(Enemy e) {
+        double luck = random.nextInt(10);
+        System.out.println("✾✾═════✦✧✦✧✦═════✾✾");
+        System.out.println("Dostal jsi damage: " + e.getUtok() + " a smula: " + luck);
+        double damage = e.getUtok() + luck - postava.getObrana(postava);
+        if (damage > 0) {
+            postava.setCurrentHealth(Math.max(0, postava.getCurrentHealth() - damage));
+        } else {
+            System.out.println("--------------");
+            System.out.println("Ubranil jsi ho");
+            System.out.println("--------------");
+        }
+        System.out.println("Máš " + postava.getCurrentHealth() + " HP.");
+    }
 
-    public void handleDeaths(){}
+    public void fight() {
+        if (!move.getCurrentRoom().getListOfEnemies().isEmpty()) {
+            hits();
+        } else {
+            System.out.println("///++++++++++++++++++++++++++///");
+            System.out.println("NEJSOU TU ENEMY");
+            System.out.println("///++++++++++++++++++++++++++///");
+
+        }
+    }
+
+    //fighting
+    public void hits() {
+        int chose = random.nextInt(2);
+
+        switch (chose) {
+//enemy starts
+            case 0:
+                System.out.println("Nepritel te prepadl");
+                int size = move.getCurrentRoom().getListOfEnemies().size();
+                for (int i = 0; i < size; i++) {
+                    for (Enemy enemy : move.getCurrentRoom().getListOfEnemies()) {
+
+                        if (enemy.getHp() == 0) {
+                            break;
+                        }
+
+                        boolean endFight = false;
+                        while (endFight == false) {
+                            enemyAttack(enemy);
+                            playerAttack(enemy);
 
 
-    public void  enemyDeaths(){}
+                            boolean isEnemyDead = isenemyDeaths(enemy.getHp(), enemy);
+                            boolean isPDead = isPlayerDead(postava.getCurrentHealth(), enemy);
+
+                            if (isPDead) {
+                                isEnemyDead = false;
+                            }
+
+                            if (isEnemyDead && isPDead == false) {
+
+                                if (move.getCurrentRoom().getListOfEnemies().isEmpty() || deadEnemies.size() == move.getCurrentRoom().getNuberOfEnemies()) {
+                                    System.out.println("║███████████║");
+                                    System.out.println("Nejsou tu dalsi enemy");
+                                    System.out.println("║███████████║");
+                                    endFight = true;
+                                    return;
+                                } else {
+                                    System.out.println("Jsou tu dalsi enemy: " + move.getCurrentRoom().getListOfEnemies().size());
+                                    System.out.println("  ");
+                                    endFight = false;
+                                    break;
+                                }
+
+                            } else if (isPDead) {
+                                System.out.println("   ");
+                                System.out.println("   ");
+                                System.out.println("OPOUSTENI BOJE");
+                                System.out.println("   ");
+                                System.out.println("   ");
+                                endFight = true;
+                                return;
+                            } else if (!isEnemyDead && !isPDead) {
+
+                                endFight = false;
+                            } else {
+                                System.out.println(" ");
+                                System.out.println(" ");
+                                System.out.println(" ");
+                                System.out.println(" ");
+                                System.out.println(" ");
+                                System.out.println("CHYBA BOJE");
+                                endFight = true;
+
+                            }
+
+                        }
+                    }
+                }
+
+
+// player starts
+            case 1:
+                System.out.println(" Zautocil jsi na nepritele");
+                int sized = move.getCurrentRoom().getListOfEnemies().size();
+                for (int i = 0; i < sized; i++) {
+                    for (Enemy enemy : move.getCurrentRoom().getListOfEnemies()) {
+
+                        if (enemy.getHp() == 0) {
+                            break;
+                        }
+
+                        boolean endFight = false;
+                        while (endFight == false) {
+                            playerAttack(enemy);
+                            enemyAttack(enemy);
+
+
+                            boolean isEnemyDead = isenemyDeaths(enemy.getHp(), enemy);
+                            boolean isPDead = isPlayerDead(postava.getCurrentHealth(), enemy);
+
+                            if (isPDead) {
+                                isEnemyDead = false;
+                            }
+
+                            if (isEnemyDead && !isPDead) {
+
+                                if (move.getCurrentRoom().getListOfEnemies().isEmpty() || deadEnemies.size() == move.getCurrentRoom().getNuberOfEnemies()) {
+                                    System.out.println("║███████████║");
+                                    System.out.println("Nejsou tu dalsi enemy");
+                                    System.out.println("║███████████║");
+                                    endFight = true;
+                                    return;
+                                } else {
+                                    System.out.println("Jsou tu dalsi enemy: " + move.getCurrentRoom().getListOfEnemies().size());
+                                    System.out.println("  ");
+                                    endFight = false;
+                                    break;
+                                }
+
+                            } else if (isPDead) {
+                                System.out.println("   ");
+                                System.out.println("   ");
+                                System.out.println("OPOUSTENI BOJE");
+                                System.out.println("   ");
+                                System.out.println("   ");
+                                endFight = true;
+                                return;
+                            } else if (!isEnemyDead && !isPDead) {
+
+                                endFight = false;
+
+                            } else {
+                                System.out.println(" ");
+                                System.out.println(" ");
+                                System.out.println(" ");
+                                System.out.println(" ");
+                                System.out.println(" ");
+                                System.out.println("CHYBA BOJE");
+                                endFight = true;
+
+                            }
+
+                        }
+                    }
+                }
+
+
+        }
+
+    }
+
+
+    //pokud umre hrac
+    //enemy se resetuje hp
+    //posunu se na prvni mistnost
+    //resetuje HP a Level
+    public boolean isPlayerDead(double health, Enemy e) {
+        if (health <= 0) {
+            e.setHp(100);
+            move.setCurrentRoom(move.getRooms().getFirst());
+            postava.setLevel(1);
+            postava.setCurrentHealth(postava.getMaxHealth());
+            System.out.println("┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼");
+            System.out.println("YOU  DIED");
+            System.out.println("┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼");
+            System.out.println(postava.toString());
+
+            return true;
+        } else {
+            return false;
+        }
+
+
+    }
+
+    //pokud umre enemy
+    //odebrani enemy z current room array
+    //pridani do deadEnemies
+    //pridani hp pro hrace
+    public boolean isenemyDeaths(double health, Enemy e) {
+        if (health <= 0) {
+            deadEnemies.add(e);
+            move.getCurrentRoom().getListOfEnemies().remove(e);
+            System.out.println("║║║║║║║║║");
+            System.out.println("Enemy DIED");
+            System.out.println("║║║║║║║║║");
+            postava.setCurrentHealth(postava.getCurrentHealth() + 20);
+            return true;
+        } else {
+            return false;
+        }
+
+    }
 
 
 
@@ -430,7 +611,6 @@ EFF
     }
 
      */
-
 
 
 }

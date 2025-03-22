@@ -6,14 +6,16 @@ import MainGame.Move;
 import org.w3c.dom.ls.LSOutput;
 
 import java.util.Scanner;
-
+import Character.*;
 public class PickUp extends Command {
     Move move;
     Scanner scanner = new Scanner(System.in);
-    Invertory invertory = new Invertory();
-
+    Invertory invertory;
+Postava postava;
     @Override
     public String execute() {
+        Invertory invertorys = new Invertory(postava,move);
+        invertory=invertorys;
         invertorying();
         vypis();
         return " POCET VECI V BATOHU: " + invertory.veciBatoh.size() + "\n" + "POCET KLICU:" + invertory.kliceBatoh.size();
@@ -24,10 +26,9 @@ public class PickUp extends Command {
         return false;
     }
 
-    public PickUp(Move move) {
+    public PickUp(Move move,  Postava postava) {
         this.move = move;
-
-
+        this.postava = postava;
     }
 
     public void vypis() {
@@ -55,7 +56,7 @@ public class PickUp extends Command {
 
 
     public void invertorying() {
-        if (!move.getCurrentRoom().getListOfEnemies().isEmpty() && !move.getCurrentRoom().getKeysList().isEmpty()) {
+        if (move.getCurrentRoom().getListOfEnemies().isEmpty() && (!move.getCurrentRoom().getKeysList().isEmpty()||!move.getCurrentRoom().getItemsList().isEmpty())) {
             System.out.println("Predmety v mistnosti");
             System.out.println(" ❖═══≪✦✧✦✧✦✧≫═══❖ ");
             System.out.println(move.getCurrentRoom().getItemsList());
@@ -71,9 +72,9 @@ public class PickUp extends Command {
 
         int vyber;
         int vyber2;
-
-        for (int i = 0; i < move.getCurrentRoom().getItemsList().size(); i++) {
-
+int size= move.getCurrentRoom().getItemsList().size();
+        for (int i = 0; i <size; i++) {
+            System.out.println(move.getCurrentRoom().getItemsList());
             System.out.println("Chces si vzit predmet 1=ano / 2=ne:");
             int choose = scanner.nextInt();
             switch (choose) {
@@ -91,7 +92,8 @@ public class PickUp extends Command {
                         System.out.println(move.getCurrentRoom().getItemsList());
                         System.out.println("-------------");
                         System.out.println("Vyber co odeberes ze sveho inventare");
-                        System.out.println("vyber 0 az " + invertory.veciBatoh.size());
+
+                        System.out.println("vyber 1 az " + invertory.veciBatoh.size());
                         System.out.println(" VYBER:");
                         vyber = scanner.nextInt();
                         System.out.println("-------------");
@@ -100,20 +102,30 @@ public class PickUp extends Command {
                         System.out.println(" VYBER:");
                         vyber2 = scanner.nextInt();
 //prace v Inventar
-                        invertory.replaceItem(vyber, vyber2);
+                        invertory.replaceItem(vyber-1, vyber2-1);
+                        if(move.getCurrentRoom().getItemsList().size()<=0) {
+                            break;
+                        }
 //pokud je dost mista v inventari
                     } else {
                         System.out.println(move.getCurrentRoom().getItemsList());
                         System.out.println("Co si chces vzit do inventare");
-                        System.out.println("vyber 0 az " + move.getCurrentRoom().getItemsList().size());
+                        System.out.println("vyber 1 az " + move.getCurrentRoom().getItemsList().size());
                         System.out.println(" ---------");
                         vyber = scanner.nextInt();
 
-                        invertory.addToInvenoty(vyber);
-                    }
+                        invertory.addToInvenoty(vyber-1);
+
+                    } if(move.getCurrentRoom().getItemsList().size()<=0) {
+                    break;
+                }
+                    scanner.nextLine();
+                    continue;
+
                 case 2:
                     System.out.println("PRACE S INVENTAREM ZRUSENA");
                     invertory.leaveItems();
+                    scanner.nextLine();
                     break;
             }
         }
@@ -121,8 +133,18 @@ public class PickUp extends Command {
         //ohlidani aby zadny klic nebyl vynecahn
 
         System.out.println("VEM SI VSECHNY KLICE DO INVENTARE");
-        for (int i = 0; i < move.getCurrentRoom().getKeysList().size(); i++) {
+        int count=move.getCurrentRoom().getKeysList().size();
+        for (int i = 0; i < count; i++) {
             workingWithKeys();
+            if(move.getCurrentRoom().getKeysList().size()<=0) {
+                break;
+            }
+            scanner.nextLine();
+        }
+        if(invertory.kliceBatoh.size()>0) {
+            System.out.println("Super mas vsechny klice");
+        }else {
+            System.out.println("Dneska nic sorry");
         }
     }
 

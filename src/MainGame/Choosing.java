@@ -19,7 +19,7 @@ Move move;
 public void inicializace(){
 mapa.put("talk",new TalkToNPC(move));
 mapa.put("walk", move);
-mapa.put("pickup",new PickUp(move));
+mapa.put("pickup",new PickUp(move,postava));
 mapa.put("help",new Help());
 mapa.put("exit",new Exit());
 mapa.put("fight",new Fight(postava,move));
