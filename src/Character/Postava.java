@@ -98,7 +98,7 @@ public abstract class Postava {
                 System.out.println("-----------------");
 
 
-                return new Bojovnik(jmeno, 20,7 , 6, 25, (IRasa) object);
+                return new Bojovnik(jmeno, 20, 7, 6, 25, (IRasa) object);
 
             case 2:
                 System.out.println("-----------------");
@@ -118,21 +118,35 @@ public abstract class Postava {
                 return null;
         }
     }
-//specialni vlastnosti pro danou kategorii
+
+    //specialni vlastnosti pro danou kategorii
     public double getSila() {
-        return sila * rasa.bonusSila();
+        double strenght = sila * rasa.bonusSila();
+        double strenghtGrounded = Math.round(strenght * 10.0) / 10.0;
+        sila = strenghtGrounded;
+        return sila;
     }
 
     public double getInteligence() {
-        return inteligence * rasa.bonusInteligence();
+        double intelig = inteligence * rasa.bonusInteligence();
+        double inteligencerounded = Math.round(intelig * 10.0) / 10.0;
+        inteligence = inteligencerounded;
+        return inteligence;
     }
 
     public double getObratnost() {
-        return obratnost * rasa.bonusObratnost();
+        double strenght = obratnost * rasa.bonusObratnost();
+        double strenghtGrounded = Math.round(strenght * 10.0) / 10.0;
+        obratnost = strenghtGrounded;
+        return obratnost;
     }
 
     public double getOdolnost() {
-        return odolnost * rasa.bonusOdolnost();
+
+        double strenght = odolnost * rasa.bonusOdolnost();
+        double strenghtGrounded = Math.round(strenght * 10.0) / 10.0;
+        odolnost = strenghtGrounded;
+        return odolnost;
     }
 
     public double getRana(Postava obrance) {
@@ -146,7 +160,6 @@ public abstract class Postava {
     }
 
     public abstract double getVlastnostKObrane(Postava obrance);
-
 
 
     public void upgradeInteligence(Postava inteligenceBro) {
@@ -246,7 +259,6 @@ public abstract class Postava {
     public void setLevel(int level) {
         this.level = level;
     }
-
 
 
     public IRasa getRasa() {

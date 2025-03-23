@@ -11,7 +11,7 @@ public class Invertory {
     protected int MaxVeci;
     protected int MaxKeys;
     Postava postava;
-    ArrayList<Items> veciBatoh = new ArrayList<>();
+    public ArrayList<Items> veciBatoh = new ArrayList<>();
     ArrayList<Keys> kliceBatoh = new ArrayList<>();
     Move move;
 
@@ -38,6 +38,7 @@ public class Invertory {
             //pridani hodnot z itemu
             postava.setCurrentHealth(postava.getCurrentHealth() + item.getBonusHp());
             postava.setMaxHealth(postava.getCurrentHealth() + item.getBonusHp());
+
             postava.setInteligence(postava.getInteligence() + item.getBonusInteligence());
             postava.setOdolnost(postava.getOdolnost() + item.getBonusOdolnost());
             postava.setObratnost(postava.getObratnost() + item.getBonusObratnst());
@@ -45,11 +46,7 @@ public class Invertory {
 
 
         }
-        //pocitani bonusu
-        postava.getRasa().bonusInteligence();
-        postava.getRasa().bonusObratnost();
-        postava.getRasa().bonusSila();
-        postava.getRasa().bonusOdolnost();
+
 
     }
 
@@ -63,11 +60,7 @@ public class Invertory {
         postava.setSila(postava.getSila() - veciBatoh.get(num).getBonusSila());
 
 
-        //pocitani bonusu
-        postava.getRasa().bonusInteligence();
-        postava.getRasa().bonusObratnost();
-        postava.getRasa().bonusSila();
-        postava.getRasa().bonusOdolnost();
+
 
 
     }

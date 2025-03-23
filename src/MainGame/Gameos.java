@@ -15,7 +15,7 @@ import Character.*;
 public class Gameos {
     protected String direction;
     private String filepath = "Rooms.txt";
-    ArrayList<Room> roomes = new ArrayList<>();
+   public ArrayList<Room> roomes = new ArrayList<>();
     Move move = new Move();
     Scanner scanner = new Scanner(System.in);
 
