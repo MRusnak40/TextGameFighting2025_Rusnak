@@ -46,7 +46,10 @@ public class Invertory {
 
 
         }
-
+        postava.getInteligence();
+        postava.getObratnost();
+        postava.getSila();
+        postava.getOdolnost();
 
     }
 
@@ -58,9 +61,6 @@ public class Invertory {
         postava.setOdolnost(postava.getOdolnost() - veciBatoh.get(num).getBonusOdolnost());
         postava.setObratnost(postava.getObratnost() - veciBatoh.get(num).getBonusObratnst());
         postava.setSila(postava.getSila() - veciBatoh.get(num).getBonusSila());
-
-
-
 
 
     }
@@ -87,7 +87,7 @@ public class Invertory {
     public void leaveItems() {
 
         for (int i = 0; i < move.getCurrentRoom().getItemsList().size(); i++)
-            if(!move.getCurrentRoom().getItemsList().isEmpty()) {
+            if (!move.getCurrentRoom().getItemsList().isEmpty()) {
                 move.getCurrentRoom().getItemsList().removeFirst();
                 System.out.println("  ");
                 System.out.println("Predmety zmizeli z mistnosti");
@@ -106,6 +106,11 @@ public class Invertory {
             System.out.println("Klic se nenachazi na tomto miste v inventari ");
             return;
         }
+
+    }
+
+
+    public void activateKeys() {
 
     }
 

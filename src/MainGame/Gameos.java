@@ -15,7 +15,7 @@ import Character.*;
 public class Gameos {
     protected String direction;
     private String filepath = "Rooms.txt";
-   public ArrayList<Room> roomes = new ArrayList<>();
+    public ArrayList<Room> roomes = new ArrayList<>();
     Move move = new Move();
     Scanner scanner = new Scanner(System.in);
 
@@ -94,9 +94,6 @@ public class Gameos {
             }
 
 
-
-
-
         } while (!exit);
     }
 
@@ -129,4 +126,52 @@ public class Gameos {
 
     }
 
+
+    public static boolean isIncomeBigEnough(int income, int max, int minimum) {
+
+        if (income >= max) {
+            return false;
+        } else if (income <= minimum) {
+            return false;
+        } else if (income >= minimum && income <= max) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static int isIncomeGoodWithScanner(int max, int minimum) {
+        Scanner scanner = new Scanner(System.in);
+        int income;
+        boolean isOkIncome = false;
+        while (!isOkIncome) {
+            try {
+                income = scanner.nextInt();
+                boolean isOutOfBounds = Gameos.isIncomeBigEnough(income, max, minimum);
+                if (isOutOfBounds) {
+                    isOkIncome = true;
+                    return income;
+                } else {
+                    isOkIncome = false;
+                    System.out.println(" ");
+                    System.out.println("Vstup je pres velikost vyberu");
+                    System.out.println(" ");
+                    scanner.nextLine();
+                }
+
+            } catch (Exception e) {
+                System.out.println(" ");
+                System.out.println("spatny vstup");
+                System.out.println(" ");
+                isOkIncome = false;
+                scanner.nextLine();
+            }
+
+        }
+
+        return 0;
+
+    }
+
 }
+

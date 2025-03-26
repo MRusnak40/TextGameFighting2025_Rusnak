@@ -1,6 +1,7 @@
 package AtributesOfPlayer;
 
 import MainGame.Command;
+import MainGame.Gameos;
 import MainGame.Move;
 import NPCs.NPC;
 import Rooms.Room;
@@ -123,7 +124,14 @@ public class TalkToNPC extends Command {
         if( (notIm-number)>0 ) {
             System.out.println("--------***---------");
             System.out.println("Chces mluvit i s ostatnimi? 1/0  \n1=ano \n0=ne");
-            int confirm = scanner.nextInt();
+
+
+            //testing method for solving scanner problem
+            int confirm = Gameos.isIncomeGoodWithScanner(1,0);
+
+
+
+
             switch (confirm) {
 
                 case 1:

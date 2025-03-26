@@ -73,8 +73,13 @@ public class Move extends Command {
         System.out.println("Pocet dulezitych npc v mistnsoti:" + informationAboutTalking());
         System.out.println("-----------");
 
-        System.out.println("Kam chces jit ↓,↑,→,←,: ");
-        setDirection(scanner.nextLine());
+        //is it nessesary?
+        while (!isMoved) {
+            System.out.println("Kam chces jit ↓,↑,→,←,: ");
+
+            setDirection(scanner.next());
+        }
+
         System.out.println(getCurrentRoom());
 
 
