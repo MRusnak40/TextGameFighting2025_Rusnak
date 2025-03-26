@@ -75,9 +75,11 @@ public class Move extends Command {
 
         //is it nessesary?
         while (!isMoved) {
+
             System.out.println("Kam chces jit ↓,↑,→,←,: ");
 
             setDirection(scanner.next());
+            scanner.nextLine();
         }
 
         System.out.println(getCurrentRoom());
