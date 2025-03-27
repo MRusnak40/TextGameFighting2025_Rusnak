@@ -1,5 +1,7 @@
 package KeysAtributes;
 
+import Rooms.CombinationKeyForUnlock;
+
 public  abstract class Keys {
     protected KeyEnum type;
 protected String name;
@@ -7,14 +9,32 @@ protected boolean movable;
 protected boolean visible;
 protected boolean broken;
 protected boolean used;
+protected CombinationKeyForUnlock codeToUnlock;
 
-    public Keys(KeyEnum type, String name, boolean movable, boolean visible, boolean broken, boolean used) {
+    public Keys(KeyEnum type, String name, boolean movable, boolean visible, boolean broken, boolean used, CombinationKeyForUnlock codeToUnlock) {
         this.type = type;
         this.name = name;
         this.movable = movable;
         this.visible = visible;
         this.broken = broken;
         this.used = used;
+        this.codeToUnlock = codeToUnlock;
+    }
+
+    public KeyEnum getType() {
+        return type;
+    }
+
+    public void setType(KeyEnum type) {
+        this.type = type;
+    }
+
+    public CombinationKeyForUnlock getCodeToUnlock() {
+        return codeToUnlock;
+    }
+
+    public void setCodeToUnlock(CombinationKeyForUnlock codeToUnlock) {
+        this.codeToUnlock = codeToUnlock;
     }
 
     public String getName() {
@@ -60,11 +80,13 @@ protected boolean used;
     @Override
     public String toString() {
         return "Keys{" +
-                "name='" + name + '\'' +
+                "type=" + type +
+                ", name='" + name + '\'' +
                 ", movable=" + movable +
                 ", visible=" + visible +
                 ", broken=" + broken +
                 ", used=" + used +
+                ", codeToUnlock=" + codeToUnlock +
                 '}';
     }
 }

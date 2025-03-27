@@ -23,13 +23,14 @@ public  class    Room {
     protected int numberOfNPCs;
     protected int numberOfItems;
     protected int numberOfKeys;
+    protected CombinationKeyForUnlock codeForKeys;
     ArrayList<Enemy> listOfEnemies;
     ArrayList<NPC> listOfNPCs;
     ArrayList<Items> itemsList;
     ArrayList<Keys> keysList;
 
 
-    public Room(String nameOfRoom, int x, int y, boolean isPosibleGoLeft, boolean isPosibleGoRight, boolean isPosibleGoUp, boolean isPosibleGoDown, String description, boolean isUnlocekd, boolean isVisible, boolean wasThere, int nuberOfEnemies, int numberOfNPCs, int numberOfItems, int numberOfKeys) {
+    public Room(String nameOfRoom, int x, int y, boolean isPosibleGoLeft, boolean isPosibleGoRight, boolean isPosibleGoUp, boolean isPosibleGoDown, String description, boolean isUnlocekd, boolean isVisible, boolean wasThere, int nuberOfEnemies, int numberOfNPCs, int numberOfItems, int numberOfKeys,CombinationKeyForUnlock codeForKeys) {
         this.nameOfRoom = nameOfRoom;
         this.x = x;
         this.y = y;
@@ -45,6 +46,7 @@ public  class    Room {
         this.numberOfNPCs = numberOfNPCs;
         this.numberOfItems = numberOfItems;
         this.numberOfKeys = numberOfKeys;
+        this.codeForKeys=codeForKeys;
         this.listOfEnemies = new ArrayList<>();
         this.listOfNPCs = new ArrayList<>();
         this.itemsList = new ArrayList<>();

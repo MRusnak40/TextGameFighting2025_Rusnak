@@ -2,6 +2,7 @@ package MainGame;
 
 import KeysAtributes.*;
 import NPCs.*;
+import Rooms.CombinationKeyForUnlock;
 import Rooms.Room;
 
 import java.io.BufferedReader;
@@ -17,7 +18,7 @@ public class GameLoadingData {
     ArrayList<Room> rooms = new ArrayList<>();
 
     public ArrayList<Room> loadRoomsFromFile(String filePath) {
-loadComponents();
+        loadComponents();
         String line;
 
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
@@ -47,32 +48,33 @@ loadComponents();
                 int numberOfNPCs = Integer.parseInt(roomData[12]);
                 int numberOfItems = Integer.parseInt(roomData[13]);
                 int numberOfKeys = Integer.parseInt(roomData[14]);
-                Room room = new Room(nameOfRoom, x, y, isPosibleGoLeft, isPosibleGoRight, isPosibleGoUp, isPosibleGoDown, description, isUnlocked, isVisible, wasThere, nuberOfEnemies, numberOfNPCs, numberOfItems, numberOfKeys);
+                CombinationKeyForUnlock codeForUnlock= CombinationKeyForUnlock.valueOf(roomData[15].toUpperCase());
+                Room room = new Room(nameOfRoom, x, y, isPosibleGoLeft, isPosibleGoRight, isPosibleGoUp, isPosibleGoDown, description, isUnlocked, isVisible, wasThere, nuberOfEnemies, numberOfNPCs, numberOfItems, numberOfKeys,codeForUnlock);
 
                 for (int i = 0; i < room.getNuberOfEnemies(); i++) {
 
-                        room.getListOfEnemies().add(enemies.remove(0));
+                    room.getListOfEnemies().add(enemies.remove(0));
 
                 }
 
                 // Přidání NPC
                 for (int i = 0; i < room.getNumberOfNPCs(); i++) {
 
-                        room.getListOfNPCs().add(NPCList.remove(0));
+                    room.getListOfNPCs().add(NPCList.remove(0));
 
                 }
 
                 // Přidání předmětů
                 for (int i = 0; i < room.getNumberOfItems(); i++) {
 
-                        room.getItemsList().add(itemsArrayList.remove(0));
+                    room.getItemsList().add(itemsArrayList.remove(0));
 
                 }
 
                 // Přidání klíčů
                 for (int i = 0; i < room.getNumberOfKeys(); i++) {
 
-                        room.getKeysList().add(keysArrayList.remove(0));  // Oprava nesprávného seznamu
+                    room.getKeysList().add(keysArrayList.remove(0));  // Oprava nesprávného seznamu
 
                 }
 
@@ -157,28 +159,28 @@ loadComponents();
     }
 
 
-    public void loadComponents(){
+    public void loadComponents() {
         GameLoadingData gameLoadingData = new GameLoadingData();
-       enemies =gameLoadingData.loadEnemies("FILESforTXt/Enemys.txt");
+        enemies = gameLoadingData.loadEnemies("FILESforTXt/Enemys.txt");
         System.out.println("*************************");
         System.out.println(gameLoadingData.enemies);
         System.out.println(gameLoadingData.enemies.size());
         System.out.println("*************************");
 
-        keysArrayList=gameLoadingData.loadKEys("FILESforTXt/Keyz.txt");
+        keysArrayList = gameLoadingData.loadKEys("FILESforTXt/Keyz.txt");
 
         System.out.println("*************************");
         System.out.println(gameLoadingData.keysArrayList);
         System.out.println(gameLoadingData.keysArrayList.size());
         System.out.println("*************************");
 
-       NPCList= gameLoadingData.loadNPCsFromFile("FILESforTXt/NPCs.txt");
+        NPCList = gameLoadingData.loadNPCsFromFile("FILESforTXt/NPCs.txt");
         System.out.println("******************");
         System.out.println(gameLoadingData.NPCList);
         System.out.println(gameLoadingData.NPCList.size());
         System.out.println("*************************");
 
-       itemsArrayList= gameLoadingData.loadITEMS("FILESforTXt/Items.txt");
+        itemsArrayList = gameLoadingData.loadITEMS("FILESforTXt/Items.txt");
         System.out.println("******************");
         System.out.println(gameLoadingData.itemsArrayList);
         System.out.println(gameLoadingData.itemsArrayList.size());
@@ -188,6 +190,7 @@ loadComponents();
         System.out.println(" ");
 
     }
+
     public ArrayList<Items> loadITEMS(String filePath) {
 
         String line;
@@ -382,13 +385,13 @@ loadComponents();
 
                     switch (type) {
                         case MAP:
-                            key = new Map(type, attributes[1], Boolean.parseBoolean(attributes[2]), Boolean.parseBoolean(attributes[3]), Boolean.parseBoolean(attributes[4]), Boolean.parseBoolean(attributes[5]));
+                            key = new Map(type, attributes[1], Boolean.parseBoolean(attributes[2]), Boolean.parseBoolean(attributes[3]), Boolean.parseBoolean(attributes[4]), Boolean.parseBoolean(attributes[5]),CombinationKeyForUnlock.valueOf(attributes[6].toUpperCase()));
                             break;
                         case PAINTING:
-                            key = new Painting(type, attributes[1], Boolean.parseBoolean(attributes[2]), Boolean.parseBoolean(attributes[3]), Boolean.parseBoolean(attributes[4]), Boolean.parseBoolean(attributes[5]));
+                            key = new Painting(type, attributes[1], Boolean.parseBoolean(attributes[2]), Boolean.parseBoolean(attributes[3]), Boolean.parseBoolean(attributes[4]), Boolean.parseBoolean(attributes[5]),CombinationKeyForUnlock.valueOf(attributes[6].toUpperCase()));
                             break;
                         case KEY:
-                            key = new Key(type, attributes[1], Boolean.parseBoolean(attributes[2]), Boolean.parseBoolean(attributes[3]), Boolean.parseBoolean(attributes[4]), Boolean.parseBoolean(attributes[5]));
+                            key = new Key(type, attributes[1], Boolean.parseBoolean(attributes[2]), Boolean.parseBoolean(attributes[3]), Boolean.parseBoolean(attributes[4]), Boolean.parseBoolean(attributes[5]),CombinationKeyForUnlock.valueOf(attributes[6].toUpperCase()));
                             break;
                         default:
                             System.out.println("Unknown key type: " + attributes[0]);
@@ -412,15 +415,13 @@ loadComponents();
     }
 
 
-
-    public static StringBuilder loadStory(){
-        StringBuilder story=new StringBuilder();
-
-
+    public static StringBuilder loadStory() {
+        StringBuilder story = new StringBuilder();
 
 
         return story;
     }
+
     public ArrayList<Enemy> getEnemies() {
         return enemies;
     }

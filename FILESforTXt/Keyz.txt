@@ -1,5 +1,5 @@
-PAINTING,Napsané souřadnice na zdi,false,true,false,false
-KEY,Klíček od budovy kam nikdo nechce,true,true,false,false
-KEY,Klíč od přístřešku zaklinače,true,true,false,false
-KEY,Kámen světla,true,true,false,false
-MAP,Archivařská mapa,false,true,false,false
+PAINTING,Napsané souřadnice na zdi,false,true,false,false,ROOM9
+KEY,Klíček od budovy kam nikdo nechce,true,true,false,false,ROOM8
+KEY,Klíč od přístřešku zaklinače,true,true,false,false,ROOM7
+KEY,Kámen zrozeni,true,true,false,false,ROOM5
+MAP,Archivařská mapa,false,true,false,false,ROOM4

@@ -1,9 +1,9 @@
-Náměstí miru,0,0,true,true,true,true,"Hlavni namesti kde chybi kamen svetla",true,true,true,0,2,0,0
-Chroptici chyse,0,1,false,false,true,true,"Jsi ve staré  budove stínů",false,true,true,2,1,1,0
-Pristresek zaklinace,0,2,false,false,false,true,"Zde se míchají lektvary pro vesnici",false,true,true,3,1,1,1
-Chajda chudeho poutnika,0,-1,false,false,true,true,"Zde bydlí ti nejchudší",false,true,false,3,2,1,0
-Chata bohateho mlynare,0,-2,false,false,true,false,"Tady se mele všechna mouka",true,true,false,3,1,2,1
-Zbytek ohorele chaty,1,0,true,true,false,false,"Zde se stala velká nehoda",true,false,false,2,1,2,1
-Zbrojnice,2,0,true,false,false,false,"Zde byly všechny zbraně",true,false,false,1,2,0,1
-Kostel,-1,0,true,true,false,false,"Dům svatý",true,true,false,1,1,2,0
-Sklad,-2,0,false,true,false,false,"Uschovna obilí",true,true,false,2,1,2,1
+Náměstí miru,0,0,true,true,true,true,"Hlavni namesti kde chybi kamen svetla",true,true,true,0,2,0,0,ROOM1
+Chroptici chyse,0,1,false,false,true,true,"Jsi ve staré  budove stínů",false,true,true,2,1,1,0,ROOM7
+Pristresek zaklinace,0,2,false,false,false,true,"Zde se míchají lektvary pro vesnici",false,true,true,3,1,1,1,ROOM8
+Chajda chudeho poutnika,0,-1,false,false,true,true,"Zde bydlí ti nejchudší",false,true,false,3,2,1,1,ROOM5
+Chata bohateho mlynare,0,-2,false,false,true,false,"Tady se mele všechna mouka",true,true,false,3,1,2,1,ROOM6
+Zbytek ohorele chaty,1,0,true,true,false,false,"Zde se stala velká nehoda",true,false,false,2,1,2,1,ROOM4
+Zbrojnice,2,0,true,false,false,false,"Zde byly všechny zbraně",true,false,false,1,2,0,0,ROOM9
+Kostel,-1,0,true,true,false,false,"Dům svatý",true,true,false,1,1,2,0,ROOM2
+Sklad,-2,0,false,true,false,false,"Uschovna obilí",true,true,false,2,1,2,1,ROOM3
