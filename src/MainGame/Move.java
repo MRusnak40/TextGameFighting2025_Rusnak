@@ -186,7 +186,7 @@ public class Move extends Command {
 
         for (NPC npc : currentRoom.getListOfNPCs()) {
 
-            if (npc.isImportant()) {
+            if (npc.isImportant() && !npc.isSpoken()) {
                 counting++;
             }
 

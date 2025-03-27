@@ -71,10 +71,12 @@ protected boolean isImportant;
     @Override
     public String toString() {
         return "NPC{" +
-                "name='" + name + '\'' +
+                "type=" + type +
+                ", name='" + name + '\'' +
                 ", dialog='" + dialog + '\'' +
                 ", welcomeText='" + welcomeText + '\'' +
                 ", isSpoken=" + isSpoken +
+                ", isImportant=" + isImportant +
                 '}';
     }
 }

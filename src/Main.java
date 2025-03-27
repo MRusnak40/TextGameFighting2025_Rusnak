@@ -36,6 +36,7 @@ chyby a tipy
 - reseni klicu a jejich schopnost odemikat mistnosti
 -udelat konec hry
 -pridani mosznosti vedet kolik uz jsem navsivil mistnsoti
+- prepis hondot v bojovnik
  */
         }
     }

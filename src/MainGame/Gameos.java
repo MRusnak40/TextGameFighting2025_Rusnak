@@ -129,9 +129,9 @@ public class Gameos {
 
     public static boolean isIncomeBigEnough(int income, int max, int minimum) {
 
-        if (income >= max) {
+        if (income > max) {
             return false;
-        } else if (income <= minimum) {
+        } else if (income < minimum) {
             return false;
         } else if (income >= minimum && income <= max) {
             return true;
