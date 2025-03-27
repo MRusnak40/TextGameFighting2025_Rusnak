@@ -37,6 +37,7 @@ chyby a tipy
 -udelat konec hry
 -pridani mosznosti vedet kolik uz jsem navsivil mistnsoti
 - prepis hondot v bojovnik
+-check if i die what happend with enemies
  */
         }
     }

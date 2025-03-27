@@ -153,6 +153,7 @@ public class TalkToNPC extends Command {
     }
 
 
+
     public void talking() {
         //mluveni s nedulezityma osobama
         if (!move.getCurrentRoom().getListOfNPCs().isEmpty()) {
@@ -200,6 +201,8 @@ public class TalkToNPC extends Command {
         return responses[rd.nextInt(responses.length)];
     }
 
+
+
     //mluveni s dulezityma osobama
     public void inevitableTalking() {
 
@@ -230,4 +233,4 @@ public class TalkToNPC extends Command {
 }
 
 
-}
+

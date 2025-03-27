@@ -72,7 +72,7 @@ public class Move extends Command {
         System.out.println("----------------→♫♫♫♫");
         System.out.println("Pocet dulezitych npc v mistnsoti:" + informationAboutTalking());
         System.out.println("-----------");
-
+        isMoved = false;
         //is it nessesary?
         while (!isMoved) {
 

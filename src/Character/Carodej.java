@@ -44,14 +44,11 @@ public class Carodej extends Postava {
         return super.getOdolnost();
     }
 
-    @Override
-    public double getRana(Postava obrance) {
-        return super.getRana(obrance);
-    }
+
 
     @Override
     public double getObrana(Postava protivnik) {
-        return super.getObrana(protivnik);
+        return inteligence+obratnost+level;
     }
 
 

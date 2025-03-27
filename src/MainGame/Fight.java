@@ -234,6 +234,7 @@ public class Fight extends Command {
             postava.setCurrentHealth(postava.getMaxHealth());
             System.out.println("┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼");
             System.out.println("YOU  DIED");
+            System.out.println("BYL JSI PREMISTEN NA POCATECNI MISTNST");
             System.out.println("┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼");
             System.out.println(postava.toString());
 
@@ -257,6 +258,7 @@ public class Fight extends Command {
             System.out.println("Enemy DIED");
             System.out.println("║║║║║║║║║");
             postava.setCurrentHealth(postava.getCurrentHealth() + 20);
+            System.out.println("Bylo ti pricteno HP za zabiti:+20Hp");
             return true;
         } else {
             return false;

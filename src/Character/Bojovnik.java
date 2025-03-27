@@ -14,12 +14,12 @@ public class Bojovnik extends Postava {
     }
 
     public double getUtok() {
-        return sila+inteligence+obratnost ;
+        return sila+inteligence+obratnost+level ;
     }
 
     @Override
     public double getVlastnostKObrane(Postava obrance) {
-        return obratnost+odolnost;
+        return obratnost+odolnost+level;
     }
 
     @Override
@@ -42,10 +42,6 @@ public class Bojovnik extends Postava {
         return super.getOdolnost();
     }
 
-    @Override
-    public double getRana(Postava obrance) {
-        return super.getRana(obrance);
-    }
 
     @Override
     public double getObrana(Postava protivnik) {

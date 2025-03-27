@@ -16,12 +16,12 @@ public class Pruzkumnik extends Postava{
 
     @Override
     public double getUtok() {
-        return sila+inteligence+obratnost;
+        return sila+inteligence+obratnost+level;
     }
 
     @Override
     public double getVlastnostKObrane(Postava obrance) {
-        return obratnost+obratnost;
+        return obratnost+inteligence+level;
     }
 
     @Override
@@ -44,10 +44,7 @@ public class Pruzkumnik extends Postava{
         return super.getOdolnost();
     }
 
-    @Override
-    public double getRana(Postava obrance) {
-        return super.getRana(obrance);
-    }
+
 
     @Override
     public double getObrana(Postava protivnik) {
