@@ -1,9 +1,11 @@
 package AtributesOfPlayer;
 
 import KeysAtributes.Items;
+import KeysAtributes.KeyEnum;
 import KeysAtributes.Keys;
 import MainGame.Move;
 import Character.*;
+import Rooms.Room;
 
 import java.util.ArrayList;
 
@@ -112,6 +114,31 @@ public class Invertory {
 
     public void activateKeys() {
 
+        for (Keys keys : kliceBatoh) {
+
+
+            for (Room room : move.getRooms()) {
+
+                if (keys.getCodeToUnlock() == room.getCodeForKeys()) {
+
+                    if (keys.getType() == KeyEnum.MAP || keys.getType() == KeyEnum.PAINTING) {
+                        room.setVisible(true);
+                        System.out.println("  ");
+                        System.out.println("Room byla odemcena :" + room.toString());
+                        System.out.println("  ");
+                        continue;
+                    } else if (keys.getType() == KeyEnum.KEY) {
+                        room.setUnlocekd(true);
+                        System.out.println("  ");
+                        System.out.println("Room byla nalezena: " + room.toString());
+                        System.out.println("  ");
+                        continue;
+                    }
+                }
+            }
+
+
+        }
     }
 
 

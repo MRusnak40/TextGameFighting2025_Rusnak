@@ -151,16 +151,21 @@ public class PickUp extends Command {
         int count = move.getCurrentRoom().getKeysList().size();
         for (int i = 0; i < count; i++) {
             workingWithKeys();
-            if (move.getCurrentRoom().getKeysList().size() <= 0) {
+            if (move.getCurrentRoom().getKeysList().isEmpty()) {
                 break;
             }
             scanner.nextLine();
         }
-        if (invertory.kliceBatoh.size() > 0) {
+
+
+        if (invertory.kliceBatoh.size() > 0 && move.getCurrentRoom().getKeysList().isEmpty()) {
             System.out.println("Super mas vsechny klice");
+            invertory.activateKeys();
         } else {
             System.out.println("Dneska nic sorry");
         }
+
+
     }
 
     //pridani klice
@@ -170,13 +175,10 @@ public class PickUp extends Command {
         System.out.println("vyber 1 az " + move.getCurrentRoom().getKeysList().size());
 
 
-
-
         int vyber = Gameos.isIncomeGoodWithScanner(move.getCurrentRoom().getKeysList().size(), 1);
 
 
-
-
         invertory.pickUpKeys(vyber - 1);
+
     }
 }

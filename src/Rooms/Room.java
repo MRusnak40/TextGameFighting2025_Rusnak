@@ -53,6 +53,14 @@ public  class    Room {
         this.keysList = new ArrayList<>();
     }
 
+    public CombinationKeyForUnlock getCodeForKeys() {
+        return codeForKeys;
+    }
+
+    public void setCodeForKeys(CombinationKeyForUnlock codeForKeys) {
+        this.codeForKeys = codeForKeys;
+    }
+
     public int getNuberOfEnemies() {
         return nuberOfEnemies;
     }
