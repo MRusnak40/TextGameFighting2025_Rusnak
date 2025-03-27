@@ -39,5 +39,8 @@ chyby a tipy
 - prepis hondot v bojovnik
 -check if i die what happend with enemies
  */
+
+
+
         }
     }
