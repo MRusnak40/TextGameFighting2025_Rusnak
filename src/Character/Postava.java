@@ -98,7 +98,7 @@ public abstract class Postava {
                 System.out.println("-----------------");
 
 
-                return new Bojovnik(jmeno, 10, 3, 3, 17, (IRasa) object);
+                return new Bojovnik(jmeno, 100, 3, 3, 17, (IRasa) object);
 
             case 2:
                 System.out.println("-----------------");

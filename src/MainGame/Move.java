@@ -179,6 +179,9 @@ public class Move extends Command {
         return false;
     }
 
+
+
+
     //pocet dulzitych npcs
     public int informationAboutTalking() {
         int counting = 0;
@@ -186,15 +189,34 @@ public class Move extends Command {
 
         for (NPC npc : currentRoom.getListOfNPCs()) {
 
-            if (npc.isImportant() && !npc.isSpoken()) {
+            if (npc.isImportant() ) {
                 counting++;
             }
 
         }
+
         return counting;
     }
 
 
+
+    /*
+public int informationAboutTalking() {
+    int counting = 0;
+
+    if (currentRoom != null && currentRoom.getListOfNPCs() != null) {
+        for (NPC npc : currentRoom.getListOfNPCs()) {
+            if (npc.isImportant() && !npc.isSpoken()) {
+                counting++;
+            }
+        }
+    }
+
+    return counting;
+}
+
+
+     */
     public boolean isMoved() {
         return isMoved;
     }

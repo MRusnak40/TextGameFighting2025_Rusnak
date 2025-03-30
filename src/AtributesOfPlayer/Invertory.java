@@ -8,6 +8,7 @@ import Character.*;
 import Rooms.Room;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Invertory {
     protected int MaxVeci;
@@ -16,6 +17,7 @@ public class Invertory {
     public ArrayList<Items> veciBatoh = new ArrayList<>();
     ArrayList<Keys> kliceBatoh = new ArrayList<>();
     Move move;
+    Scanner sc = new Scanner(System.in);
 
     public Invertory(Postava postava, Move move) {
         this.postava = postava;
@@ -31,6 +33,7 @@ public class Invertory {
         System.out.println("VEC:\n" + move.getCurrentRoom().getItemsList().get(vecDoInventare));
         veciBatoh.add(move.getCurrentRoom().getItemsList().remove(vecDoInventare));
         setBonusesForItems();
+
 
     }
 
@@ -87,14 +90,19 @@ public class Invertory {
 
     //odstraneni
     public void leaveItems() {
+        int big = move.getCurrentRoom().getItemsList().size();
 
-        for (int i = 0; i < move.getCurrentRoom().getItemsList().size(); i++)
+        for (int i = 0; i < big; i++) {
+
+
             if (!move.getCurrentRoom().getItemsList().isEmpty()) {
-                move.getCurrentRoom().getItemsList().removeFirst();
+                    move.getCurrentRoom().getItemsList().removeFirst();
                 System.out.println("  ");
                 System.out.println("Predmety zmizeli z mistnosti");
                 System.out.println("  ");
+
             }
+        }
     }
 
     public void pickUpKeys(int vyber) {

@@ -114,7 +114,10 @@ public class TalkToNPC extends Command {
 
     //vyber toho jestli bude mluvit i s nedulezitima
     public void chooseToTalk() {
+
+
         if (move.getCurrentRoom().getListOfEnemies().isEmpty()) {
+
             if (!move.getCurrentRoom().getListOfNPCs().isEmpty()) {
 
                 inevitableTalking();
@@ -147,17 +150,18 @@ public class TalkToNPC extends Command {
                 System.out.println(" ✶*•̩̩͙✧•̩̩͙✦✧✦✧✦✧•̩̩͙✧•̩̩͙*✶");
                 System.out.println("Neni tu zadny vesnican😉");
             }
-        }else {
+        } else {
             System.out.println("NEJDRIV ZABIJ MONSTRA");
         }
     }
 
 
-
     public void talking() {
         //mluveni s nedulezityma osobama
         if (!move.getCurrentRoom().getListOfNPCs().isEmpty()) {
+
             for (NPC npCs : move.getCurrentRoom().getListOfNPCs()) {
+
                 System.out.println("   ");
                 System.out.println("   ");
 
@@ -189,6 +193,7 @@ public class TalkToNPC extends Command {
         }
     }
 
+
     private String getRandomResponse() {
         String[] responses = {
                 "Nemam cas ted",
@@ -202,27 +207,27 @@ public class TalkToNPC extends Command {
     }
 
 
-
     //mluveni s dulezityma osobama
     public void inevitableTalking() {
 
         for (NPC npCs : move.getCurrentRoom().getListOfNPCs()) {
             if (npCs.isImportant()) {
+                System.out.println("   ");
                 System.out.println("**--------------**");
                 System.out.println("DULEZITY DIALOG");
                 System.out.println("**--------------**");
-                System.out.println("   ");
+
                 System.out.println("   ");
                 System.out.println("/=================/");
                 System.out.println("Mluvis s: " + npCs.getName());
                 System.out.println("*===================*");
 
 
-                if (!npCs.isSpoken()) {
+                if (!npCs.isSpoken() && npCs.isImportant()) {
                     System.out.println(npCs.getWelcomeText());
                     System.out.println(npCs.getDialog());
                     npCs.setSpoken(true);
-                } else {
+                } else if (npCs.isSpoken() && npCs.isImportant()) {
                     System.out.println(getRandomResponse());
 
                 }

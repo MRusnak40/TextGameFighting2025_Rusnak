@@ -79,6 +79,118 @@ public class Fight extends Command {
         }
     }
 
+
+    public void hits() {
+
+
+        int size = move.getCurrentRoom().getListOfEnemies().size();
+        for (int i = 0; i < size; i++) {
+
+            try {
+
+                for (Enemy enemy : move.getCurrentRoom().getListOfEnemies()) {
+                    int chose = random.nextInt(2);
+
+                    if (enemy.getHp() == 0) {
+                        break;
+                    }
+
+                    boolean endFight = false;
+
+
+                    while (endFight == false) {
+
+
+                        switch (chose) {
+
+                            case 0:
+                                System.out.println("  ");
+                                System.out.println("Enemy zapocina kolo ");
+                                System.out.println("  ");
+
+                                enemyAttack(enemy);
+                                playerAttack(enemy);
+                                break;
+                            case 1:
+                                System.out.println("  ");
+                                System.out.println("Hrac zapocina kolo ");
+                                System.out.println("  ");
+
+
+                                playerAttack(enemy);
+                                enemyAttack(enemy);
+                                break;
+                        }
+
+                        //ohlasi smrt enemy
+                        //prida hraci hp
+                        boolean isEnemyDead = isenemyDeaths(enemy.getHp(), enemy);
+
+
+                        //reset hp pro hrace
+                        // nastavi 100 hp enemy
+
+                        boolean isPDead = isPlayerDead(postava.getCurrentHealth(), enemy);
+
+                        if (isPDead) {
+                            isEnemyDead = false;
+                        }
+
+                        if (isEnemyDead && isPDead == false) {
+
+                            deadEnemies.add(enemy);
+                            move.getCurrentRoom().getListOfEnemies().remove(enemy);
+
+                            if (move.getCurrentRoom().getListOfEnemies().isEmpty() || deadEnemies.size() == move.getCurrentRoom().getNuberOfEnemies()) {
+                                System.out.println("║███████████║");
+                                System.out.println("Nejsou tu dalsi enemy");
+                                System.out.println("║███████████║");
+                                endFight = true;
+                                return;
+                            } else {
+                                System.out.println("Jsou tu dalsi enemy: " + move.getCurrentRoom().getListOfEnemies().size());
+                                System.out.println("  ");
+                                System.out.println("BOJUJ");
+                                endFight = false;
+                                break;
+                            }
+
+                        } else if (isPDead) {
+                            System.out.println("   ");
+                            System.out.println("   ");
+                            System.out.println("OPOUSTENI BOJE");
+                            System.out.println("   ");
+                            System.out.println("   ");
+                            endFight = true;
+                            return;
+                        } else if (!isEnemyDead && !isPDead) {
+
+                            endFight = false;
+                        } else {
+                            System.out.println(" ");
+                            System.out.println(" ");
+                            System.out.println(" ");
+                            System.out.println(" ");
+                            System.out.println(" ");
+                            System.out.println("CHYBA BOJE");
+                            endFight = true;
+
+                        }
+
+
+                    }
+
+                }
+            } catch (Exception e) {
+                continue;
+            }
+
+        }
+
+
+    }
+
+/*
     //fighting
     public void hits() {
         int chose = random.nextInt(2);
@@ -220,7 +332,7 @@ public class Fight extends Command {
         }
 
     }
-
+*/
 
     //pokud umre hrac
     //enemy se resetuje hp
@@ -252,8 +364,7 @@ public class Fight extends Command {
     //pridani hp pro hrace
     public boolean isenemyDeaths(double health, Enemy e) {
         if (health <= 0) {
-            deadEnemies.add(e);
-            move.getCurrentRoom().getListOfEnemies().remove(e);
+
             System.out.println("║║║║║║║║║");
             System.out.println("Enemy DIED");
             System.out.println("║║║║║║║║║");
