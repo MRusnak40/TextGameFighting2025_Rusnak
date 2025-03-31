@@ -34,6 +34,9 @@ mapa.put("statistics",new Statistics(postava));
         this.postava = postava;
     }
 
+    /**
+     * puts commands here for commander
+     */
     //zadavam coomand co budu delat
     //klic zadavam
 public void doCommand(){

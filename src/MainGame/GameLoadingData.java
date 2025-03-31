@@ -17,6 +17,12 @@ public class GameLoadingData {
     ArrayList<Items> itemsArrayList = new ArrayList<>();
     ArrayList<Room> rooms = new ArrayList<>();
 
+
+    /**
+     * loads from file
+     * @param filePath-path was I am taking the information
+     * @return arraylist with Rooms (all map)
+     */
     public ArrayList<Room> loadRoomsFromFile(String filePath) {
         loadComponents();
         String line;
@@ -158,7 +164,12 @@ public class GameLoadingData {
         }
     }
 
-
+    /**
+     * loads Enemies
+     * lodads Keys
+     * loads items
+     * adding to rooms
+     */
     public void loadComponents() {
         GameLoadingData gameLoadingData = new GameLoadingData();
         enemies = gameLoadingData.loadEnemies("FILESforTXt/Enemys.txt");

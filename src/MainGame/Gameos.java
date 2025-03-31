@@ -27,6 +27,9 @@ public class Gameos {
     private Boolean exit = false;
 //loads gamne
 
+    /**
+     * loads the game Enemies Rooms items keys
+     */
     public void loadGame() {
 
         GameLoadingData g = new GameLoadingData();
@@ -51,6 +54,11 @@ public class Gameos {
         choose = new Choosing(move, postava);
     }
 
+
+    /**
+     *
+     *main loop where everyting working together
+     */
     //main loop
     public void gameLoop() {
         //loaded game
@@ -126,7 +134,13 @@ public class Gameos {
 
     }
 
-
+    /**
+     *
+     * @param income-  what you wanna test
+     * @param max-max zou put on income
+     * @param minimum-minimum what you can put in income
+     * @return the income if is ok
+     */
     public static boolean isIncomeBigEnough(int income, int max, int minimum) {
 
         if (income > max) {

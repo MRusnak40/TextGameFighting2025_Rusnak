@@ -70,6 +70,8 @@ public class Invertory {
 
     }
 
+
+
     //vymenei veci pokud mam plny inventar
     //numberOfItemOnInvenotry - co odeberu z inventory
     //itemOfRoom - co si vezmes do  inventaere

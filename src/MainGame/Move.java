@@ -87,7 +87,10 @@ public class Move extends Command {
 
     }
 
-
+    /**
+     * sets new coridores and new current room
+     * @param direction- what player puts in
+     */
     public void setDirection(String direction) {
 
 
@@ -125,7 +128,10 @@ public class Move extends Command {
 
     }
 
-
+    /**
+     * tests if you can move on that position
+     * @return false if you didnt moved
+     */
     public boolean controllingPossibilites() {
         int index = 0;
         int counting = 0;

@@ -42,6 +42,10 @@ public abstract class Postava {
         this.currentHealth = 100;
     }
 
+    /**
+     * @param choosedNumber- number to choose a cahracter
+     * @return postava with added stats
+     */
     public static Postava vvberPostavy(int choosedNumber) {
 
 
@@ -153,12 +157,13 @@ public abstract class Postava {
     public abstract double getUtok();
 
     public double getObrana(Postava protivnik) {
-        return  protivnik.getVlastnostKObrane(this);
+        return protivnik.getVlastnostKObrane(this);
     }
 
     public abstract double getVlastnostKObrane(Postava obrance);
 
 
+/*
     public void upgradeInteligence(Postava inteligenceBro) {
 
         inteligenceBro.inteligence += 1;
@@ -191,6 +196,8 @@ public abstract class Postava {
         double obratnostGrounded = Math.round(obratnost * 10.0) / 10.0;
         inteligenceBro.obratnost = obratnostGrounded;
     }
+
+ */
 
 
     @Override

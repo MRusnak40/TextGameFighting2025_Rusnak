@@ -10,6 +10,10 @@ public class SetCharacter {
 
     Scanner sc = new Scanner(System.in);
 
+    /**
+     * setsd name of postava and sets character
+     * @return postava and his stats
+     */
     public Postava setNameOfCharacter() {
         //vyber postavy
         boolean vyber = true;

@@ -16,10 +16,11 @@ public class PickUp extends Command {
     Invertory invertory;
 
     Postava postava;
-
+    Invertory invertorys;
+ //= new Invertory(postava, move)
     @Override
     public String execute() {
-        Invertory invertorys = new Invertory(postava, move);
+
         invertory = invertorys;
         invertorying();
         vypis();
@@ -34,6 +35,7 @@ public class PickUp extends Command {
     public PickUp(Move move, Postava postava) {
         this.move = move;
         this.postava = postava;
+        invertorys = new Invertory(postava, move);
     }
 
     public void vypis() {

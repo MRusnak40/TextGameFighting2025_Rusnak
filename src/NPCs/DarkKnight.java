@@ -7,33 +7,6 @@ public class DarkKnight extends Enemy {
         super( type, jmeno, sila, inteligence, obratnost, odolnost, level, hp);
     }
 
-/*
-    @Override
-    public double setInteligence() {
-        return 0;
-    }
 
-    @Override
-    public double setObratnost() {
-        return 0;
-    }
-
-    @Override
-    public double setSila() {
-        return 0;
-    }
-
-    @Override
-    public double setLevel() {
-        return 0;
-    }
-
-    @Override
-    public double setOdolnost() {
-        return 0;
-    }
-
-
- */
 
 }

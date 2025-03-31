@@ -155,7 +155,10 @@ public class TalkToNPC extends Command {
         }
     }
 
-
+    /**
+     * you can talk with npcs
+     * only with not important
+     */
     public void talking() {
         //mluveni s nedulezityma osobama
         if (!move.getCurrentRoom().getListOfNPCs().isEmpty()) {
@@ -206,7 +209,9 @@ public class TalkToNPC extends Command {
         return responses[rd.nextInt(responses.length)];
     }
 
-
+    /**
+     * let you talk to  important npcs
+     */
     //mluveni s dulezityma osobama
     public void inevitableTalking() {
 

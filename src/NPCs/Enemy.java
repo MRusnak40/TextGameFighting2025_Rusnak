@@ -39,15 +39,7 @@ public abstract class Enemy {
     }
 
     ;
-/*
-    public abstract double setInteligence();
-    public abstract double setObratnost();
-    public abstract double setSila();
-    public abstract double setLevel();
-    public abstract double setOdolnost();
 
-
- */
 
     public double getHp() {
         return hp;
