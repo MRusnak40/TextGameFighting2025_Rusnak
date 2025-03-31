@@ -200,6 +200,9 @@ public class Fight extends Command {
         if (health <= 0) {
             e.setHp(100);
             move.setCurrentRoom(move.getRooms().getFirst());
+            move.setCurretX(0);
+            move.setCurretY(0);
+            move.setMoved(false);
             postava.setLevel(1);
             postava.setCurrentHealth(postava.getMaxHealth());
             System.out.println("┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼");
@@ -228,6 +231,7 @@ public class Fight extends Command {
             System.out.println("║║║║║║║║║");
             postava.setCurrentHealth(postava.getCurrentHealth() + 20);
             System.out.println("Bylo ti pricteno HP za zabiti:+20Hp");
+            postava.setLevel(postava.getLevel() + 1);
             return true;
         } else {
             return false;
