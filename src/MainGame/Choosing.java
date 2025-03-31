@@ -53,21 +53,7 @@ public void doCommand(){
         System.out.println(">> Nedefinovany prikaz");
     }
 }
-//cyklus hry volam  a doCommand
-    /*
-public void start(){
 
-    try{
-        do{
-            doCommand();
-        }while(!exit);
-
-    }catch (Exception e){
-        System.out.println(e.getMessage());
-    }
-}
-
-     */
 
 
 

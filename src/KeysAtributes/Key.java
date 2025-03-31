@@ -9,11 +9,5 @@ public class Key extends Keys {
         super(type, name, movable, visible, broken, used, codeToUnlock);
     }
 
-    public void setUnlocked() {
 
-    }
-
-    public void ThrowableFromBag() {
-
-    }
 }

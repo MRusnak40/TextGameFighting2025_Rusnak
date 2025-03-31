@@ -9,7 +9,4 @@ public class Map extends Keys{
         super(type, name, movable, visible, broken, used, codeToUnlock);
     }
 
-    public boolean setVisibilty(){
-        return false;
-    }
 }

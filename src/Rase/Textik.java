@@ -15,21 +15,12 @@ public abstract class Textik {
 
     public static void characterText() {
         System.out.println("vyber si Character :1-3");
-        System.out.println("1. Válečník na počátku: Síla = 10, Inteligence = 1, Obratnost = 1, Odolnost = 6");
-        System.out.println("2. Mág na počátku: Síla = 5, Inteligence = 10, Obratnost = 3, Odolnost = 1");
-        System.out.println("3. Průzkumník na počátku: Síla = 3, Inteligence = 7, Obratnost = 10, Odolnost = 0");
+        System.out.println("1. Válečník na počátku: Síla = 7, Inteligence = 3, Obratnost = 3, Odolnost = 17");
+        System.out.println("2. Mág na počátku: Síla = 17, Inteligence = 7, Obratnost = 9, Odolnost = 1");
+        System.out.println("3. Průzkumník na počátku: Síla = 7, Inteligence = 17, Obratnost = 10, Odolnost = 0");
         System.out.print("Your Choose:");
     }
 
 
-    public static void movePosibilites() {
-        System.out.println("3x Rooms.txt");
-        System.out.println("1* Arena you will be fighting enemies");
-        System.out.println("2* Shop where you can buy upgrades");
-        System.out.println("3* Deafaultly you are in lobby");
 
-        System.out.println("-*--*--*------*-*-*-*-*--*");
-        System.out.println(" choosing by numbers  1-3");
-
-    }
 }
