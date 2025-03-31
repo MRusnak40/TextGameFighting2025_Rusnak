@@ -12,7 +12,7 @@ SHADOW,Vysávač duše,4,6,8,2,7,100
 DARKKNIGHT,Posluhovač temna,10,4,1,10,3,150
 SHADOW,Vysávač duše,4,6,8,2,4,100
 DARKKNIGHT,Posluhovač temna,10,4,1,10,3,150
-SHADOW,Vysávač duše,4,6,8,2,1,100
+SHADOW,Vysávač duše,4,6,8,2,1,60
 SHADOW,Vysávač duše,4,6,8,2,2,100
 SHADOW,Vysávač duše,4,6,8,2,1,100
 
