@@ -16,6 +16,8 @@ gameos.gameLoop();
 
 
 /*
+Full done project i fonuded no bugs
+for next programing shoud more think about structure of program
 chyby a tipy
 
 
